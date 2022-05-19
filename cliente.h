@@ -12,8 +12,7 @@ class Cliente {
 
   public:
     std::string nome;
-    bool inadiplente; 
-    UnidadeConsumidora unidade;       
+    bool inadiplente;       
     std::vector<UnidadeConsumidora> listaUnidades;
     std::vector<Fatura> listaFaturasPagas;
 

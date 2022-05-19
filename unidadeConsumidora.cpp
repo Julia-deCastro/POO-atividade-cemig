@@ -3,7 +3,8 @@
 
 UnidadeConsumidora::UnidadeConsumidora(string endereco){
   this->endereco = endereco;
-  /* this->dono = dono; */
+  this->id_uc = cont_uc;
+  cont_uc++;
 }
 
 void UnidadeConsumidora::AdicionarFatura(Fatura fat){
