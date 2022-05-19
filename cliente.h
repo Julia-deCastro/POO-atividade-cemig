@@ -1,7 +1,7 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-//#include "UnidadeConsumidora.h"
+#include "unidadeConsumidora.h"
 #include "fatura.h"
 #include<iostream>
 #include <vector>
@@ -12,9 +12,10 @@ class Cliente {
 
   public:
     std::string nome;
-    bool inadiplente;        
-    std::vector<UnidadeConsumidora> ListaUnidades;
-    std::vector<Fatura> ListaFaturasPagas;
+    bool inadiplente; 
+    UnidadeConsumidora unidade;       
+    std::vector<UnidadeConsumidora> listaUnidades;
+    std::vector<Fatura> listaFaturasPagas;
 
     void CadastrarCliente (string);
     void AdicionarUnidade (string endereco);
