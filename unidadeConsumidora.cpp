@@ -1,9 +1,9 @@
 #include "unidadeConsumidora.h"
 #include <list>
 
-UnidadeConsumidora::UnidadeConsumidora(string endereco, Cliente dono){
+UnidadeConsumidora::UnidadeConsumidora(string endereco){
   this->endereco = endereco;
-  this->dono = dono;
+  /* this->dono = dono; */
 }
 
 void UnidadeConsumidora::AdicionarFatura(Fatura fat){

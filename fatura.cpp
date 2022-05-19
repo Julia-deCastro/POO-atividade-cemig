@@ -1,14 +1,14 @@
-#include "../Arquivos-h/Fatura.h"
+#include "fatura.h"
 #include <math.h>
 
 const float jurosDia = 0.0;
 
-  void Fatura::Fatura(float valorFatura, float consumo, int diasAtraso){
-    this->valorFatura = valorFatura;
-    this->consumo = consumo;
-    this->diasAtraso = diasAtraso;
-    diasAtraso = 0;
-    quitado = false;
+    Fatura::Fatura(float valorFatura, float consumo, int diasAtraso){
+      this->valorFatura = valorFatura;
+      this->consumo = consumo;
+      this->diasAtraso = diasAtraso;
+      diasAtraso = 0;
+      quitado = false;
      
   }
   void Fatura::quitarFatura (){

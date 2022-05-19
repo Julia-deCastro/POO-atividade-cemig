@@ -11,28 +11,34 @@ void Cliente::CadastrarCliente (string nome) {
 
 void Cliente::AdicionarUnidade (string endereco){
   UnidadeConsumidora u = UnidadeConsumidora(endereco);
-  this->ListaUnidades.push_back(u)
+  this->listaUnidades.push_back(u);
 }
   
 float Cliente::CalcularPagamento(){
-
+  vector<UnidadeConsumidora>::iterator i;
+  vector<Fatura>::iterator j;
+  float valor = 0;
+  for(i = listaUnidades.begin(); i != listaUnidades.end(); i++){
+    for(j = i->listaFatura.begin(); j != i->listaFatura.end(); j++){
+      if (j->quitado == 0){
+        valor += j->valorFatura + j->calcularJuros();
+      }
+    }
+  }
+  return valor;
 }
 
 UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
   vector<UnidadeConsumidora>::iterator it;
-  for (it = ListaUnidades.begin(); it != ListaUnidades.end(); it++){
+  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
     if (it->endereco == endereco)
-      return it;
+      return *it;
+  }
 }
 
 
 
-void Cliente::EstaInadiplente() {
 
-  if (this->inadiplente){
-    cout << "O cliente está inadiplente" << endl
-  } 
-  else {
-    cout << "O cliente está em dia" << endl
-  }
+bool Cliente::EstaInadiplente() {
+ return this->inadiplente;
 };  

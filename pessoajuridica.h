@@ -13,7 +13,7 @@ class PessoaJuridica: public Cliente{
 
         string cnpj;
 
-        void cadastrarCNPJ (string){}
+        void cadastrarCNPJ (string);
 
 };
 

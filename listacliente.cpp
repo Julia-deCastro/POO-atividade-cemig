@@ -13,8 +13,16 @@ void Lista_Cliente::AdicionarInadiplente(Cliente cliente){
 
 
 void Lista_Cliente::RemoverCliente(Cliente cliente){
-
-  
+  vector<Cliente>::iterator it;
+  for(it = listaCliente.begin(); it!= listaCliente.end(); it++){
+    if (it->nome == cliente.nome)
+      this->listaCliente.erase(it);
+  }
 }
+
+
+
+
+
 
 
