@@ -16,13 +16,11 @@ void Cliente::AdicionarUnidade (string endereco){
   
 float Cliente::CalcularPagamento(){
   vector<UnidadeConsumidora>::iterator i;
-  vector<Fatura>::iterator j;
   float valor = 0;
-  for(i = listaUnidades.begin(); i != listaUnidades.end(); i++){
-    for(j = i->listaFatura.begin(); j != i->listaFatura.end(); j++){
-      if (j->quitado == 0){
-        valor += j->valorFatura + j->calcularJuros();
-      }
+  for(UnidadeConsumidora i : listaUnidades){
+    for(Fatura j : i.listaFaturas){
+      if(j.getQuitado() == 0)
+        valor += j.getValorFatura() + j.calcularJuros();
     }
   }
   return valor;
@@ -31,12 +29,24 @@ float Cliente::CalcularPagamento(){
 UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
   vector<UnidadeConsumidora>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
-    if (it->endereco == endereco)
+    if (it->getEndereco() == endereco)
       return *it;
   }
 }
 
 bool Cliente::EstaInadiplente() {
  return this->inadiplente;
-};  
+};
+
+void Cliente::ImprimeListaFaturasPagas(){
+  for (Fatura it : listaFaturasPagas){
+    it.imprimirFatura();
+  }
+}
+
+void Cliente::ImprimeListaUnidades(){
+  for (UnidadeConsumidora it : listaUnidades){
+    it.ImprimirUnidadeConsumidora();
+  }
+}
 

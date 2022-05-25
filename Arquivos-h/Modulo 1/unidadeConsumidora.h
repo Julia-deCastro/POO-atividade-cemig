@@ -12,12 +12,17 @@ class UnidadeConsumidora {
 
     public:
 
-        string endereco;
-        std::vector<Fatura> listaFatura;
-
+        string getEndereco();
+        bool getAtivo();
+        void imprimirListaFaturas();
         UnidadeConsumidora(string endereco);
-        void AdicionarFatura(Fatura fat);       
+        void AdicionarFatura(Fatura fat);
+        void ImprimirUnidadeConsumidora();
+        std::vector<Fatura> listaFaturas;       
 
+    private:
+        string endereco;
+        bool ativo; 
 };
 
 #endif
