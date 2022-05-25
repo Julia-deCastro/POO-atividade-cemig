@@ -3,7 +3,7 @@
 
 #include "unidadeConsumidora.h"
 #include "fatura.h"
-#include<iostream>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -11,18 +11,22 @@ using namespace std;
 class Cliente {
 
   public:
-    std::string nome;
-    bool inadiplente; 
-    UnidadeConsumidora unidade;       
-    std::vector<UnidadeConsumidora> listaUnidades;
-    std::vector<Fatura> listaFaturasPagas;
+    string nome;
+    bool inadiplente;        
+  
+  public:
 
-    void CadastrarCliente (string);
+    void CadastrarCliente(string nome);
     void AdicionarUnidade (string endereco);
     float CalcularPagamento();
     bool EstaInadiplente();        
     UnidadeConsumidora PesquisarUnidade(string endereco);
+    void ImprimeListaFaturasPagas();
+    void ImprimeListaUnidades();
 
+  private:
+    vector<UnidadeConsumidora> listaUnidades;
+    vector<Fatura> listaFaturasPagas;
 };
 
 #endif
