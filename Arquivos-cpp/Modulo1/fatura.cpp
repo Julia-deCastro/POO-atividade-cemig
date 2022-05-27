@@ -1,48 +1,77 @@
 #include "../../Arquivos-h/Modulo 1/fatura.h"
 #include <math.h>
 #include <iostream>
+#include "../../Arquivos-h/Geral/Data.h"
+#include "../../Arquivos-h/Geral/Formato.h"
+#include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
 
 using namespace std;
 
-const float jurosDia = 0.05;
+const float jurosDia = 0.0005;
 
+Data hoje(){
+  
+  Data hoje;
+  
+  hoje.setDia(26);
+  hoje.setMes(05);
+  hoje.setAno(2022); 
 
+  return hoje;
+}
 
-  Fatura::Fatura(float valorFatura, float consumo, Data dataVencimento){
-    this->valorFatura = valorFatura;
-    this->consumo = consumo;
-    this->dataVencimento = dataVencimento;
-    quitado = false;
-    diasAtraso = 0;
-    valorPago = 0;
+Fatura::Fatura(float valorFatura, float consumo, Data dataVencimento){
+  this->valorFatura = valorFatura;
+  this->consumo = consumo;
+  this->dataVencimento = dataVencimento;
+  quitado = false;
+  valorPago = 0;
+
+}
+
+void Fatura::quitarFatura (){
+  this->quitado = true;
+  this->valorPago = this->valorFatura + this->calcularJuros();
+  this->dataPagamento = hoje();
+}
+  
+float Fatura::calcularJuros (){
+  float montante;
+  
+  if(this->getDiasAtraso() > 0){
+    montante = this->valorFatura*pow((1+jurosDia),this->getDiasAtraso());
+    return (montante - valorFatura);  
   }
-
-  void Fatura::quitarFatura (){
-    this->quitado = true;
+  else{
+    return 0;
   }
   
-  float Fatura::calcularJuros (){
-    float montante;
-    montante = this->valorFatura*pow((1+jurosDia),this->diasAtraso);
+}
 
-    return (montante - valorFatura);
+void Fatura::imprimirFatura (){
+  cout << "Valor Fatura: " << valorFatura << endl;
+
+  if (quitado == 0)
+    cout << "Situação da Fatura: Não quitada"  << endl;
+  else {
+    cout << "Situação da Fatura: Quitada"  << endl;
+    cout << "Data do pagamento: " ;
+    dataPagamento.printData();
+    cout << "Valor Pago: " << valorPago << endl;
   }
+  cout << "Consumo da Unidade: " << consumo << endl;
+  cout << "Data de Vencimento: ";
+  dataVencimento.printData();
+  cout << "Dias de atraso: " << this->getDiasAtraso() << endl;
+  cout << endl;
 
-  void Fatura::imprimirFatura (){
-    cout << valorFatura << endl;
-    cout << valorPago << endl;
-    cout << quitado << endl;
-    cout << consumo << endl;
-    cout << dataVencimento.getDia() << endl;
-    cout << dataPagamento.getDia() << endl;
-    cout << diasAtraso << endl;
-  }
+}
 
-  float Fatura::getValorFatura (){
-    return valorFatura;
-  }
+float Fatura::getValorFatura (){
+  return valorFatura;
+}
 
-  float Fatura::getValorPago (){
+float Fatura::getValorPago (){
     return valorPago;
   }
 
@@ -54,8 +83,17 @@ const float jurosDia = 0.05;
     return dataPagamento;
   }
 
-  int Fatura::getDiasAtraso() {
-    return dataPagamento.diffData(dataVencimento);
-  }
+bool Fatura::getQuitado(){
+  return this->quitado;
+}
+
+int Fatura::getDiasAtraso() {
+  return hoje().diffData(dataVencimento);
+}
+
+float Fatura::getConsumo(){
+  return this->consumo;
+}
+
 
   

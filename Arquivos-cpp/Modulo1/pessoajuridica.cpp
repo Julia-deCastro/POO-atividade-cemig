@@ -1,11 +1,13 @@
-#include "../../Arquivos-h/Modulo 1/unidadeConsumidora.h"
-#include <list>
+#include "../../Arquivos-h/Modulo 1/pessoajuridica.h"
+#include <iostream>
 
-UnidadeConsumidora::UnidadeConsumidora(string endereco){
-  this->endereco = endereco;
-  /* this->dono = dono; */
+using namespace std;
+
+void PessoaJuridica::cadastrarCNPJ (string cnpj){
+  this->cnpj = cnpj;
 }
 
-void UnidadeConsumidora::AdicionarFatura(Fatura fat){
-  this->listaFatura.push_back(fat);
+string PessoaJuridica::getCNPJ(){
+ 
+  return this->cnpj;
 }

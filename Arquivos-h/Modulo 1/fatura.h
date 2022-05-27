@@ -1,8 +1,10 @@
 #ifndef FATURA_H
 #define  FATURA_H
+
 #include "../../Arquivos-h/Geral/Data.h"
 #include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
 #include "../../Arquivos-h/Geral/Formato.h"
+
 
 class Fatura{
 
@@ -19,7 +21,7 @@ class Fatura{
         int getDiasAtraso();
         Data getDataVencimento();
         Data getDataPagamento();
-
+        void AdicionarFatura(Fatura fat);
 
     private:
         float valorFatura;
@@ -27,8 +29,7 @@ class Fatura{
         bool quitado;
         float consumo;
         Data dataVencimento;
-        Data dataPagamento;
-        int diasAtraso; //Queremos apenas os dias de atraso
+        Data dataPagamento;        
         
 };
 

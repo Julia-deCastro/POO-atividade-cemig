@@ -1,11 +1,10 @@
 #ifndef SERVICO_H
-#define  SERVICO_H
+#define SERVICO_H
 
 #include <iostream>
 
 #include "../Modulo 1/unidadeConsumidora.h"
 #include "../Geral/Data.h"
-#include "./funcionario.h"
 
 
 class Servico{
@@ -13,10 +12,11 @@ class Servico{
   private:
     Data data;
     UnidadeConsumidora unidade;
-    Funcionario funcionario;
 
   public:
-    void RegistraServico(Data,UnidadeConsumidora,Funcionario);
+    Servico(Data, UnidadeConsumidora);
+    Servico();
+    //void RegistraServico(Data,UnidadeConsumidora);
     Data getData();
     UnidadeConsumidora getUnidadeConsumidora();
 

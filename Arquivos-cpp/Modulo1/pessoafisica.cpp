@@ -3,6 +3,11 @@
 
 using namespace std;
 
-void PessoaFisica::cadastrarCPF(string cpf){
-    this->cpf = cpf;
+void PessoaFisica::cadastrarCPF (string cpf){
+  this->cpf = cpf;
+}
+
+string PessoaFisica::getCPF(){
+ 
+  return this->cpf;
 }

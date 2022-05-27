@@ -9,6 +9,7 @@ class Leitura:public Servico{
     float LeituraConsumo;
 
   public:
+    Leitura();
     void RealizarLeitura(float leitura);
     float ConsultarLeitura();
 

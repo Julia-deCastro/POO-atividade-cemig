@@ -3,17 +3,24 @@
 
 using namespace std;
 
-void Servico::RegistraServico(Data data,UnidadeConsumidora unidade, Funcionario funcionario){
-  
+/*
+void Servico::RegistraServico(Data data, UnidadeConsumidora unidade){
   this->data = data;
   this->unidade = unidade;
-  this->funcionario = funcionario;
-  
-}
+}*/
 
 Data Servico::getData(){
   return this->data;
 }
 UnidadeConsumidora Servico::getUnidadeConsumidora(){
   return this->unidade;
+}
+
+Servico::Servico(Data data, UnidadeConsumidora unidconsm){
+    this->data = data;
+    this->unidade = unidconsm;
+}
+
+Servico::Servico(){
+  
 }

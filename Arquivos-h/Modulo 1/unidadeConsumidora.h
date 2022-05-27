@@ -1,8 +1,9 @@
 #ifndef UNIDADECONSUMIDORA_H
 #define UNIDADECONSUMIDORA_H
 
-#include "cliente.h"
 #include "fatura.h"
+#include "../Geral/Data.h"
+#include "../Geral/ExecaoCustomizada.h"
 #include <iostream>
 #include <vector>
 
@@ -14,13 +15,19 @@ class UnidadeConsumidora {
 
         string getEndereco();
         bool getAtivo();
+        void setAtivo(bool);
         void imprimirListaFaturas();
         UnidadeConsumidora(string endereco);
-        void AdicionarFatura(Fatura fat);
+        UnidadeConsumidora();
         void ImprimirUnidadeConsumidora();
-        std::vector<Fatura> listaFaturas;       
-
+        vector<Fatura> listaFaturas;       
+        bool getInadimplente();
+        void verificaInadimplente();
+        void AdicionarFatura(Fatura fat);
+      
+        
     private:
+        bool inadimplente;
         string endereco;
         bool ativo; 
 };

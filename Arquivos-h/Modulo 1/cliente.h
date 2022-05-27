@@ -13,22 +13,23 @@ class Cliente {
   
   public:
 
-
     void CadastrarCliente(string nome);
     void AdicionarUnidade (string endereco);
     float CalcularPagamento();
-    bool EstaInadiplente();        
     UnidadeConsumidora PesquisarUnidade(string endereco);
     string getNome();
-    string getInadimplente();
+    bool getInadimplente();
     void ImprimeListaFaturasPagas();
     void ImprimeListaUnidades();
+    vector<UnidadeConsumidora> listaUnidades;
+    vector<Fatura> listaFaturasPagas;
+    void AdicionarFatura(Fatura fat, string Endereco);
+    void ImprimirFaturasDasUnidades(string Endereco);
 
   private:
     string nome;
-    bool inadiplente;
-    vector<UnidadeConsumidora> listaUnidades;
-    vector<Fatura> listaFaturasPagas;
+    bool inadimplente;
+    
 };
 
 #endif

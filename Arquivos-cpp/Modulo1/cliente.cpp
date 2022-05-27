@@ -6,7 +6,7 @@ using namespace std;
 
 void Cliente::CadastrarCliente (string nome) {
   this->nome = nome;
-  this->inadiplente = false;
+  this->inadimplente = false;
 }
 
 void Cliente::AdicionarUnidade (string endereco){
@@ -14,14 +14,18 @@ void Cliente::AdicionarUnidade (string endereco){
   this->listaUnidades.push_back(u);
 }
   
-float Cliente::CalcularPagamento(){
+float Cliente::CalcularPagamento(){ 
   vector<UnidadeConsumidora>::iterator i;
+  vector<Fatura>::iterator j;
+  
   float valor = 0;
   for(UnidadeConsumidora i : listaUnidades){
+    cout << i.listaFaturas.size();
     for(Fatura j : i.listaFaturas){
-      if(j.getQuitado() == 0)
+      if(j.getQuitado() == 0){
         valor += j.getValorFatura() + j.calcularJuros();
-    }
+      }
+    }    
   }
   return valor;
 }
@@ -29,14 +33,11 @@ float Cliente::CalcularPagamento(){
 UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
   vector<UnidadeConsumidora>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
-    if (it->getEndereco() == endereco)
+    if (it->getEndereco() == endereco){
       return *it;
+    }
   }
 }
-
-bool Cliente::EstaInadiplente() {
- return this->inadiplente;
-};
 
 void Cliente::ImprimeListaFaturasPagas(){
   for (Fatura it : listaFaturasPagas){
@@ -45,8 +46,41 @@ void Cliente::ImprimeListaFaturasPagas(){
 }
 
 void Cliente::ImprimeListaUnidades(){
+  int i=1;
   for (UnidadeConsumidora it : listaUnidades){
+    cout<< endl << "Unidade " << i << ": ";
     it.ImprimirUnidadeConsumidora();
+    i++;
+  }
+  cout << endl;
+}
+
+string Cliente::getNome(){
+
+  return this->nome;
+}
+
+bool Cliente::getInadimplente(){
+  
+  return this->inadimplente;
+
+}
+
+void Cliente::AdicionarFatura(Fatura fat, string endereco){
+  /* vector<UnidadeConsumidora>::iterator it; */
+  for (UnidadeConsumidora i: listaUnidades){
+    if (i.getEndereco() == endereco){
+        i.AdicionarFatura(fat);
+    }
   }
 }
 
+void Cliente::ImprimirFaturasDasUnidades(string end){
+  for (UnidadeConsumidora i: listaUnidades){
+    if (i.getEndereco() == end){
+        i.imprimirListaFaturas();
+    }
+  }
+
+  
+}
