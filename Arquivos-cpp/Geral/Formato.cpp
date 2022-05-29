@@ -3,8 +3,8 @@
 #include <string>
 #include <string.h>
 #include <cstddef>
-#include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
 #include "../../Arquivos-h/Geral/Formato.h"
+#include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
 
 using namespace std;
 

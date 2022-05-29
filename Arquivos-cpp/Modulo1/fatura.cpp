@@ -11,7 +11,7 @@ const float jurosDia = 0.0005;
 
 Data hoje(){
   
-  Data hoje;
+  Data hoje (0,0,0,0,0,0);
   
   hoje.setDia(26);
   hoje.setMes(05);
@@ -29,10 +29,15 @@ Fatura::Fatura(float valorFatura, float consumo, Data dataVencimento){
 
 }
 
+Fatura::Fatura(){
+
+}
+
 void Fatura::quitarFatura (){
   this->quitado = true;
   this->valorPago = this->valorFatura + this->calcularJuros();
-  this->dataPagamento = hoje();
+  this->setDataPagamento();
+
 }
   
 float Fatura::calcularJuros (){
@@ -68,19 +73,26 @@ void Fatura::imprimirFatura (){
 }
 
 float Fatura::getValorFatura (){
-  return valorFatura;
+  return this->valorFatura;
 }
 
 float Fatura::getValorPago (){
-    return valorPago;
+    return this->valorPago;
   }
 
-  Data Fatura::getDataVencimento(){
-    return dataVencimento;
-  }
+Data Fatura::getDataVencimento(){
+  return this->dataVencimento;
+}
 
-  Data Fatura::getDataPagamento(){
-    return dataPagamento;
+void Fatura::setDataPagamento(){
+  Data * data= new Data (0,0,0,0,0,0);
+  *data = hoje();
+  this->dataPagamento = *data;
+}
+
+Data Fatura::getDataPagamento(){
+
+    return this->dataPagamento;
   }
 
 bool Fatura::getQuitado(){
@@ -95,5 +107,3 @@ float Fatura::getConsumo(){
   return this->consumo;
 }
 
-
-  

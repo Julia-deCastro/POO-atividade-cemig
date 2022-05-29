@@ -11,4 +11,3 @@ class Encerramento:public Desligamento{
 };
 
 #endif
-

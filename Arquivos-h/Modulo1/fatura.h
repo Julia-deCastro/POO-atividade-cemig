@@ -11,6 +11,7 @@ class Fatura{
     public:
 
         Fatura(float valorFatura, float consumo, Data data_vencimento);
+        Fatura();
         void quitarFatura ();
         float calcularJuros ();
         void imprimirFatura();
@@ -21,7 +22,7 @@ class Fatura{
         int getDiasAtraso();
         Data getDataVencimento();
         Data getDataPagamento();
-        void AdicionarFatura(Fatura fat);
+        void setDataPagamento();
 
     private:
         float valorFatura;

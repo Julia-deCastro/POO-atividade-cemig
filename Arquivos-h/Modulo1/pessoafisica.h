@@ -13,7 +13,7 @@ class PessoaFisica: public Cliente{
     string cpf;
 
   public:
-    void cadastrarCPF (string cpf);
+    void cadastrarCPF(string cpf);
     string getCPF();
 
 };

@@ -20,11 +20,10 @@ class UnidadeConsumidora {
         UnidadeConsumidora(string endereco);
         UnidadeConsumidora();
         void ImprimirUnidadeConsumidora();
-        vector<Fatura> listaFaturas;       
+        vector<Fatura*> listaFaturas;       
         bool getInadimplente();
         void verificaInadimplente();
-        void AdicionarFatura(Fatura fat);
-      
+        void AdicionarFaturaUnidade(Fatura fat);
         
     private:
         bool inadimplente;

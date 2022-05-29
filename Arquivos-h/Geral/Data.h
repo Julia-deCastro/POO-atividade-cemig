@@ -4,6 +4,12 @@
 #include "Formato.h"
 #include "ExecaoCustomizada.h"
 
+//Constantes de Conversao
+#define YEAR_TO_SECONDS 31536000
+#define DAY_TO_SECONDS 86400
+#define HOURS_TO_SECONDS 3600
+#define MINUTE_TO_SECONDS 60
+
 using namespace std;
 
 class Data
@@ -56,7 +62,7 @@ public:
     Data dateNow();     //Retorna a data do presente momento
     void printData();       //Imprime a data na tela de acordo com o formato ja atribuido
     string getData();       //Retorna a data no formato de string
-    int diffData(Data);    // Retorna a diferenÃ§a entre duas datas em dias
+    int diffData(Data);    // Retorna a diferença entre duas datas em dias
 };
 
 #endif // DATA_H_INCLUDED

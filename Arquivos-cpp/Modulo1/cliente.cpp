@@ -6,30 +6,32 @@ using namespace std;
 
 void Cliente::CadastrarCliente (string nome) {
   this->nome = nome;
-  this->inadimplente = false;
+  this->inadiplente = false;
 }
 
 void Cliente::AdicionarUnidade (string endereco){
-  UnidadeConsumidora u = UnidadeConsumidora(endereco);
-  this->listaUnidades.push_back(u);
+  UnidadeConsumidora * u = new UnidadeConsumidora(endereco);
+
+  listaUnidades.push_back(u);
 }
   
 float Cliente::CalcularPagamento(){ 
-  vector<UnidadeConsumidora>::iterator i;
-  vector<Fatura>::iterator j;
+  vector<UnidadeConsumidora*>::iterator i;
+  vector<Fatura*>::iterator j;
   
   float valor = 0;
-  for(UnidadeConsumidora i : listaUnidades){
-    cout << i.listaFaturas.size();
-    for(Fatura j : i.listaFaturas){
-      if(j.getQuitado() == 0){
-        valor += j.getValorFatura() + j.calcularJuros();
+  for (i=listaUnidades.begin(); i!=listaUnidades.end(); i++) {
+    cout << (*i)->listaFaturas.size();
+    for(j=(*i)->listaFaturas.begin(); j!=(*i)->listaFaturas.end(); i++){
+        if((*j)->getQuitado() == 0){
+        valor += (*j)->getValorFatura() + (*j)->calcularJuros();
       }
     }    
   }
   return valor;
 }
 
+/*
 UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
   vector<UnidadeConsumidora>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
@@ -38,6 +40,7 @@ UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
     }
   }
 }
+*/
 
 void Cliente::ImprimeListaFaturasPagas(){
   for (Fatura it : listaFaturasPagas){
@@ -46,13 +49,16 @@ void Cliente::ImprimeListaFaturasPagas(){
 }
 
 void Cliente::ImprimeListaUnidades(){
+  vector<UnidadeConsumidora*>::iterator it;
   int i=1;
-  for (UnidadeConsumidora it : listaUnidades){
+
+  for (it=listaUnidades.begin(); it!=listaUnidades.end(); it++) {
     cout<< endl << "Unidade " << i << ": ";
-    it.ImprimirUnidadeConsumidora();
+    (*it)->ImprimirUnidadeConsumidora();
     i++;
   }
   cout << endl;
+
 }
 
 string Cliente::getNome(){
@@ -62,25 +68,29 @@ string Cliente::getNome(){
 
 bool Cliente::getInadimplente(){
   
-  return this->inadimplente;
+  return this->inadiplente;
 
 }
 
 void Cliente::AdicionarFatura(Fatura fat, string endereco){
-  /* vector<UnidadeConsumidora>::iterator it; */
-  for (UnidadeConsumidora i: listaUnidades){
-    if (i.getEndereco() == endereco){
-        i.AdicionarFatura(fat);
+  vector<UnidadeConsumidora*>::iterator it;
+  
+  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
+    if ((*it)->getEndereco() == endereco){
+        (*it)->AdicionarFaturaUnidade(fat);
     }
   }
+  
 }
 
 void Cliente::ImprimirFaturasDasUnidades(string end){
-  for (UnidadeConsumidora i: listaUnidades){
-    if (i.getEndereco() == end){
-        i.imprimirListaFaturas();
+  
+  vector<UnidadeConsumidora*>::iterator it;
+  
+  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
+    if ((*it)->getEndereco() == end){
+        (*it)->imprimirListaFaturas();
     }
   }
-
   
 }

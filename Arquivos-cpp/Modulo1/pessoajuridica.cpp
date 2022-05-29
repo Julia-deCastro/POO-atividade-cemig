@@ -11,3 +11,4 @@ string PessoaJuridica::getCNPJ(){
  
   return this->cnpj;
 }
+        

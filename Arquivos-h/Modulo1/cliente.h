@@ -21,14 +21,14 @@ class Cliente {
     bool getInadimplente();
     void ImprimeListaFaturasPagas();
     void ImprimeListaUnidades();
-    vector<UnidadeConsumidora> listaUnidades;
+    vector<UnidadeConsumidora*> listaUnidades;
     vector<Fatura> listaFaturasPagas;
     void AdicionarFatura(Fatura fat, string Endereco);
     void ImprimirFaturasDasUnidades(string Endereco);
 
   private:
     string nome;
-    bool inadimplente;
+    bool inadiplente;
     
 };
 

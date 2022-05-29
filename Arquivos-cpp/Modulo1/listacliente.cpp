@@ -6,9 +6,9 @@ void Lista_Cliente::AdicionarCliente(Cliente cliente){
   }
 
 
-void Lista_Cliente::AdicionarInadimplente(Cliente cliente){
+void Lista_Cliente::AdicionarInadiplente(Cliente cliente){
   if (cliente.getInadimplente() == true)
-    this->listaInadimplentes.push_back(cliente);
+    this->listaInadiplentes.push_back(cliente);
   }
 
 
@@ -19,10 +19,3 @@ void Lista_Cliente::RemoverCliente(Cliente cliente){
       this->listaCliente.erase(it);
   }
 }
-
-
-
-
-
-
-
