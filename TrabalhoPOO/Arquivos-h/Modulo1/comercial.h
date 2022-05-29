@@ -1,3 +1,0 @@
-class Comercial:public UnidadeConsumidora {
-
-};
