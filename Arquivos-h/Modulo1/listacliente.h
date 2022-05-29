@@ -10,12 +10,12 @@ class Lista_Cliente{
 
     public:
         std::vector <Cliente> listaCliente;
-        std::vector <Cliente> listaInadiplentes;
+        std::vector <Cliente> listaInadimplentes;
 
         void AdicionarCliente(Cliente cliente);
-        void AdicionarInadiplente(Cliente cliente);
+        void AdicionarInadimplente(Cliente cliente);
         void RemoverCliente(Cliente cliente);
-        void RemoverInadiplente(Cliente cliente);
+        void RemoverInadimplente(Cliente cliente);
 
 };
 

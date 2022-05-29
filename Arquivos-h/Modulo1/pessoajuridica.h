@@ -9,11 +9,12 @@ using namespace std;
 
 class PessoaJuridica: public Cliente{
 
-    public:
+    public: 
+        string getCNPJ();
+        void cadastrarCNPJ(string);
 
+    private:
         string cnpj;
-
-        void cadastrarCNPJ (string);
 
 };
 

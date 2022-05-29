@@ -8,12 +8,13 @@
 using namespace std;
 
 class PessoaFisica: public Cliente{
+  
+  private:
+    string cpf;
 
-    public:
-
-        string cpf;
-
-        void cadastrarCPF (string cpf);
+  public:
+    void cadastrarCPF (string cpf);
+    string getCPF();
 
 };
 

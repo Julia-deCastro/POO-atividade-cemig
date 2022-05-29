@@ -1,4 +1,4 @@
-#include "../../Arquivos-h/Modulo 1/pessoajuridica.h"
+#include "../../Arquivos-h/Modulo1/pessoajuridica.h"
 #include <iostream>
 
 using namespace std;

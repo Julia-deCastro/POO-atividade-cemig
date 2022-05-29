@@ -1,4 +1,4 @@
-#include "../../Arquivos-h/Modulo 2/inadiplencia.h"
+#include "../../Arquivos-h/Modulo2/inadimplencia.h"
 #include <iostream>
 
 using namespace std;

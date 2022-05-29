@@ -1,4 +1,4 @@
-#include "../../Arquivos-h/Modulo 2/funcionario.h"
+#include "../../Arquivos-h/Modulo2/funcionario.h"
 #include <iostream>
 
 using namespace std;
