@@ -1,6 +1,7 @@
 #include "../../Arquivos-h/Modulo1/cliente.h"
 #include "../../Arquivos-h/Modulo1/unidadeConsumidora.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -31,16 +32,16 @@ float Cliente::CalcularPagamento(){
   return valor;
 }
 
-/*
+
 UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
-  vector<UnidadeConsumidora>::iterator it;
+  vector<UnidadeConsumidora*>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
-    if (it->getEndereco() == endereco){
-      return *it;
+    if ((*it)->getEndereco() == endereco){
+      return **it;
     }
   }
 }
-*/
+
 
 void Cliente::ImprimeListaFaturasPagas(){
   for (Fatura it : listaFaturasPagas){
@@ -75,13 +76,13 @@ bool Cliente::getInadimplente(){
 void Cliente::AdicionarFatura(Fatura fat, string endereco){
   vector<UnidadeConsumidora*>::iterator it;
   
-  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
+  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){ 
     if ((*it)->getEndereco() == endereco){
-        (*it)->AdicionarFaturaUnidade(fat);
+      (*it)->AdicionarFaturaUnidade(fat);
     }
-  }
-  
+  } 
 }
+
 
 void Cliente::ImprimirFaturasDasUnidades(string end){
   
