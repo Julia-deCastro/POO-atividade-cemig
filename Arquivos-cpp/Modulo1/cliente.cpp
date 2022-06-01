@@ -73,7 +73,7 @@ bool Cliente::getInadimplente(){
 
 }
 
-void Cliente::AdicionarFatura(Fatura fat, string endereco){
+void Cliente::AdicionarFatura(Fatura *fat, string endereco){
   vector<UnidadeConsumidora*>::iterator it;
   
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){ 

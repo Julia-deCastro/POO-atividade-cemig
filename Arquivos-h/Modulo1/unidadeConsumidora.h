@@ -23,7 +23,7 @@ class UnidadeConsumidora {
         vector<Fatura*> listaFaturas;       
         bool getInadimplente();
         void verificaInadimplente();
-        void AdicionarFaturaUnidade(Fatura fat);
+        void AdicionarFaturaUnidade(Fatura * fat);
         
     private:
         bool inadimplente;

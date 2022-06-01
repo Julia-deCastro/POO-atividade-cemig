@@ -23,7 +23,7 @@ class Cliente {
     void ImprimeListaUnidades();
     vector<UnidadeConsumidora*> listaUnidades;
     vector<Fatura> listaFaturasPagas;
-    void AdicionarFatura(Fatura fat, string Endereco);
+    void AdicionarFatura(Fatura *fat, string Endereco);
     void ImprimirFaturasDasUnidades(string Endereco);
 
   private:

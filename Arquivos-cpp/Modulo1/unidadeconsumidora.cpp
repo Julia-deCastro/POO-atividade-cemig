@@ -59,8 +59,6 @@ UnidadeConsumidora::UnidadeConsumidora(){
   
 }
 
-void UnidadeConsumidora::AdicionarFaturaUnidade(Fatura fat){
-  Fatura * fatura = new Fatura;
-  fatura = &fat;
-  listaFaturas.push_back(fatura);
+void UnidadeConsumidora::AdicionarFaturaUnidade(Fatura *fat){  
+  listaFaturas.push_back(fat);
 }

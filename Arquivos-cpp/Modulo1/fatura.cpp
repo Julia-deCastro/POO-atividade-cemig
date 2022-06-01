@@ -54,9 +54,9 @@ float Fatura::calcularJuros (){
 }
 
 void Fatura::imprimirFatura (){
-  cout << "Valor Fatura: " << valorFatura << endl;
+  cout << "Valor Fatura: " << this->valorFatura << endl;
 
-  if (quitado == 0)
+  if (quitado == false)
     cout << "Situação da Fatura: Não quitada"  << endl;
   else {
     cout << "Situação da Fatura: Quitada"  << endl;
@@ -106,4 +106,3 @@ int Fatura::getDiasAtraso() {
 float Fatura::getConsumo(){
   return this->consumo;
 }
-
