@@ -3,7 +3,10 @@
 
 using namespace std;
 
-void Leitura::RealizarLeitura(float leitura){
+void Leitura::RealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
+  Servico(data, unidade);
+  //adiciona o serviço à lista de serviços do funcionário automaticamente
+  this->getFuncionario().AdicionarServico(Servico(data, unidade), data);
   this->LeituraConsumo = leitura;
 }
 

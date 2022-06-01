@@ -3,6 +3,11 @@
 
 using namespace std;
 
-void Encerramento::solicitadoEncerramento(UnidadeConsumidora unidade){
+void Encerramento::desligarUnidade (UnidadeConsumidora unidade, Data data){
+
   unidade.setAtivo(false);
+  cout << "Unidade desligada por inadimplencia" << endl;
+  //adiciona o serviço à lista de serviços do funcionário automaticamente
+  this->getFuncionario().AdicionarServico(Servico(data, unidade), data);
+  
 }

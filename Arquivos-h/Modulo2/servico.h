@@ -5,6 +5,7 @@
 
 #include "../Modulo1/unidadeConsumidora.h"
 #include "../Geral/Data.h"
+#include "../Modulo2/funcionario.h"
 
 
 class Servico{
@@ -12,11 +13,12 @@ class Servico{
   private:
     Data data;
     UnidadeConsumidora unidade;
+    Funcionario funcionario;
 
   public:
     Servico(Data, UnidadeConsumidora);
     Servico();
-    //void RegistraServico(Data,UnidadeConsumidora);
+    virtual void RegistraServico(Data,UnidadeConsumidora);
     Data getData();
     UnidadeConsumidora getUnidadeConsumidora();
 

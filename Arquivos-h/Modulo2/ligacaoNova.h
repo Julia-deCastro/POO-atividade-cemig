@@ -6,7 +6,8 @@
 class LigacaoNova:public Servico{
 
   public:
-    void ligarUnidade(UnidadeConsumidora);
+    void ligarUnidade(UnidadeConsumidora unidade, Data data);
 };
 
 #endif
+

@@ -24,3 +24,7 @@ Servico::Servico(Data data, UnidadeConsumidora unidconsm){
 Servico::Servico(){
   
 }
+
+Funcionario Servico::getFuncionario(){
+  return this->funcionario;
+}

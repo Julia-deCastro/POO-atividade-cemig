@@ -10,7 +10,7 @@ class Leitura:public Servico{
 
   public:
     Leitura();
-    void RealizarLeitura(float leitura);
+    void RealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade);
     float ConsultarLeitura();
 
 };
