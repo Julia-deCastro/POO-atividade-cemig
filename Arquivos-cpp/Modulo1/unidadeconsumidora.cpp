@@ -15,12 +15,10 @@ string UnidadeConsumidora::getEndereco(){
   return this->endereco;
 }
 
-void UnidadeConsumidora::imprimirListaFaturas(){
-  
+void UnidadeConsumidora::imprimirListaFaturas(){ 
   for (Fatura* it : listaFaturas){
     it->imprimirFatura();
   }
-  
 }
 void UnidadeConsumidora::ImprimirUnidadeConsumidora(){
   cout << this->getEndereco()<< "(";

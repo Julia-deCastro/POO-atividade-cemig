@@ -25,9 +25,9 @@ class Fatura{
         void setDataPagamento();
 
     private:
+        bool quitado;
         float valorFatura;
         float valorPago;
-        bool quitado;
         float consumo;
         Data dataVencimento;
         Data dataPagamento;        

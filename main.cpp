@@ -45,6 +45,6 @@ int main() {
 
   Julia.ImprimirFaturasDasUnidades("3");
 
-  cout << "Pagamento pendente: " << Julia.CalcularPagamento();
+  cout << "Pagamento pendente: " << Julia.CalcularPagamento() << endl;
   return 0;
 }

@@ -22,9 +22,8 @@ float Cliente::CalcularPagamento(){
   
   float valor = 0;
   for (i=listaUnidades.begin(); i!=listaUnidades.end(); i++) {
-    cout << (*i)->listaFaturas.size();
-    for(j=(*i)->listaFaturas.begin(); j!=(*i)->listaFaturas.end(); i++){
-        if((*j)->getQuitado() == 0){
+    for(j=(*i)->listaFaturas.begin(); j!=(*i)->listaFaturas.end(); j++){
+      if((*j)->getQuitado() == false){
         valor += (*j)->getValorFatura() + (*j)->calcularJuros();
       }
     }    
