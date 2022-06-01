@@ -1,9 +1,9 @@
-#ifndef ENCERRAMENTO_H
-#define ENCERRAMENTO_H
+#ifndef INADIMPLENCIA_H
+#define INADIMPLENCIA_H
 
 #include "./desligamento.h"
 
-class Encerramento:public Desligamento{
+class Inadimplencia:public Desligamento{
 
   public:
     void desligarUnidade(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data) override;

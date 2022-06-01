@@ -16,7 +16,8 @@ UnidadeConsumidora Servico::getUnidadeConsumidora(){
   return this->unidade;
 }
 
-Servico::Servico(Data data, UnidadeConsumidora unidconsm){
+Servico::Servico(string nomeFuncionario, string idFuncionario, Data data, UnidadeConsumidora unidconsm){
+    this->getFuncionario().CadastrarFucnionario(nomeFuncionario, idFuncionario);
     this->data = data;
     this->unidade = unidconsm;
 }

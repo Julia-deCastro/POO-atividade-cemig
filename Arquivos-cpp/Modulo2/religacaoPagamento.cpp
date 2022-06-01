@@ -3,13 +3,13 @@
 
 using namespace std;
 
-void ReligacaoPagamento::religarUnidade(UnidadeConsumidora unidade, Data data){
+void ReligacaoPagamento::religarUnidade(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data){
   if (unidade.getInadimplente() == true)
     cout << "Cliente Inadimplente";
   else {
     bool ativo = true;
     unidade.setAtivo(ativo);
     //adiciona o serviço à lista de serviços do funcionário automaticamente
-    this->getFuncionario().AdicionarServico(Servico(data, unidade), data);
+    this->getFuncionario().AdicionarServico(Servico(nomeFuncionario, idFuncionario, data, unidade), data);
   }
 }

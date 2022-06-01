@@ -3,9 +3,9 @@
 
 using namespace std;
 
-void LigacaoNova::ligarUnidade(UnidadeConsumidora unidade, Data data) {
+void LigacaoNova::ligarUnidade(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data) {
   bool ativo = true;
   //adiciona o serviço à lista de serviços do funcionário automaticamente
-  this->getFuncionario().AdicionarServico(Servico(data, unidade), data);
+  this->getFuncionario().AdicionarServico(Servico(nomeFuncionario, idFuncionario, data, unidade), data);
   unidade.setAtivo(ativo);
 }

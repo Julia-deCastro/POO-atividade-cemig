@@ -6,7 +6,7 @@
 class trocaMedidor:public Servico{
 
   public:
-    trocaMedidor(UnidadeConsumidora unidade, Data data);
+    trocaMedidor(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data);
 };
 
 #endif

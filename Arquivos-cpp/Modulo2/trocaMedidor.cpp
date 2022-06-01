@@ -3,6 +3,6 @@
 
 using namespace std;
 
-trocaMedidor::trocaMedidor(UnidadeConsumidora unidade, Data data){
-    this->getFuncionario().AdicionarServico(Servico(data, unidade), data);
+trocaMedidor::trocaMedidor(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data){
+    this->getFuncionario().AdicionarServico(Servico(nomeFuncionario, idFuncionario, data, unidade), data);
 }
