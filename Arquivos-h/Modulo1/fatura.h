@@ -20,17 +20,21 @@ class Fatura{
         bool getQuitado();
         float getConsumo();
         int getDiasAtraso();
+        int getId();
         Data getDataVencimento();
         Data getDataPagamento();
         void setDataPagamento();
 
     private:
+
+        int id;
         bool quitado;
         float valorFatura;
         float valorPago;
         float consumo;
         Data dataVencimento;
-        Data dataPagamento;        
+        Data dataPagamento;     
+        static int cont_id;  
         
 };
 

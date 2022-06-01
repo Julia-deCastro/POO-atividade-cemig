@@ -16,19 +16,20 @@ class Cliente {
     void CadastrarCliente(string nome);
     void AdicionarUnidade (string endereco);
     float CalcularPagamento();
-    UnidadeConsumidora PesquisarUnidade(string endereco);
+    UnidadeConsumidora* PesquisarUnidade(string endereco);
     string getNome();
     bool getInadimplente();
     void ImprimeListaFaturasPagas();
     void ImprimeListaUnidades();
     vector<UnidadeConsumidora*> listaUnidades;
-    vector<Fatura> listaFaturasPagas;
     void AdicionarFatura(Fatura *fat, string Endereco);
     void ImprimirFaturasDasUnidades(string Endereco);
+    void QuitarFaturaCliente(string endereco, int id); 
 
   private:
     string nome;
     bool inadiplente;
+    vector<Fatura*> listaFaturasPagas;
     
 };
 

@@ -34,8 +34,9 @@ int main() {
   jan.RealizarLeitura(500);
   Data vencJan(2022,05,05,0,0,0);
   Fatura * Janeiro= new Fatura(200, jan.ConsultarLeitura(),vencJan);
-  Janeiro->quitarFatura();
+  /* Janeiro->quitarFatura(); */
   Julia.AdicionarFatura(Janeiro, "3");
+  Julia.QuitarFaturaCliente("3",1);
   
   Leitura fev;
   Data vencFev(2022,05,05,0,0,0);
@@ -46,5 +47,9 @@ int main() {
   Julia.ImprimirFaturasDasUnidades("3");
 
   cout << "Pagamento pendente: " << Julia.CalcularPagamento() << endl;
+  cout << endl;
+
+  Julia.ImprimeListaFaturasPagas();
+
   return 0;
 }

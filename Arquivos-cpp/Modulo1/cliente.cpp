@@ -32,19 +32,19 @@ float Cliente::CalcularPagamento(){
 }
 
 
-UnidadeConsumidora Cliente::PesquisarUnidade(string endereco){
+UnidadeConsumidora* Cliente::PesquisarUnidade(string endereco){
   vector<UnidadeConsumidora*>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
     if ((*it)->getEndereco() == endereco){
-      return **it;
+      return *it;
     }
   }
 }
 
 
 void Cliente::ImprimeListaFaturasPagas(){
-  for (Fatura it : listaFaturasPagas){
-    it.imprimirFatura();
+  for (Fatura* it : listaFaturasPagas){
+    it->imprimirFatura();
   }
 }
 
@@ -85,12 +85,12 @@ void Cliente::AdicionarFatura(Fatura *fat, string endereco){
 
 void Cliente::ImprimirFaturasDasUnidades(string end){
   
-  vector<UnidadeConsumidora*>::iterator it;
-  
-  for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
-    if ((*it)->getEndereco() == end){
-        (*it)->imprimirListaFaturas();
-    }
-  }
+  PesquisarUnidade(end)->imprimirListaFaturas();
   
 }
+
+void Cliente::QuitarFaturaCliente(string endereco, int id){
+  this->PesquisarUnidade(endereco)->PesquisarFatura(id)->quitarFatura();
+  this->listaFaturasPagas.push_back(PesquisarUnidade(endereco)->PesquisarFatura(id));
+}
+

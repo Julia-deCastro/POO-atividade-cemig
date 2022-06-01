@@ -24,6 +24,7 @@ class UnidadeConsumidora {
         bool getInadimplente();
         void verificaInadimplente();
         void AdicionarFaturaUnidade(Fatura * fat);
+        Fatura* PesquisarFatura(int id);
         
     private:
         bool inadimplente;

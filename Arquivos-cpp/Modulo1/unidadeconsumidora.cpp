@@ -60,3 +60,12 @@ UnidadeConsumidora::UnidadeConsumidora(){
 void UnidadeConsumidora::AdicionarFaturaUnidade(Fatura *fat){  
   listaFaturas.push_back(fat);
 }
+
+Fatura* UnidadeConsumidora::PesquisarFatura(int id){
+  vector<Fatura*>::iterator it;
+  for (it = listaFaturas.begin(); it != listaFaturas.end(); it++){
+    if ((*it)->getId() == id){
+      return *it;
+    }
+  }
+}

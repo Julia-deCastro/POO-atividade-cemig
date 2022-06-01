@@ -8,6 +8,7 @@
 using namespace std;
 
 const float jurosDia = 0.0005;
+int::Fatura::cont_id = 0;
 
 Data hoje(){
   
@@ -26,11 +27,14 @@ Fatura::Fatura(float valorFatura, float consumo, Data dataVencimento){
   this->dataVencimento = dataVencimento;
   quitado = false;
   valorPago = 0;
+  cont_id++;
+  this->id = cont_id;
 
 }
 
 Fatura::Fatura(){
-
+  id = cont_id;
+  cont_id++;
 }
 
 void Fatura::quitarFatura (){
@@ -56,7 +60,7 @@ float Fatura::calcularJuros (){
 void Fatura::imprimirFatura (){
   cout << "Valor Fatura: " << this->valorFatura << endl;
 
-  if (quitado == false)
+  if (getQuitado() == false)
     cout << "Situação da Fatura: Não quitada"  << endl;
   else {
     cout << "Situação da Fatura: Quitada"  << endl;
@@ -101,6 +105,10 @@ bool Fatura::getQuitado(){
 
 int Fatura::getDiasAtraso() {
   return hoje().diffData(dataVencimento);
+}
+
+int Fatura::getId() {
+  return this->id;
 }
 
 float Fatura::getConsumo(){
