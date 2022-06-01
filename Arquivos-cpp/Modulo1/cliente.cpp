@@ -39,6 +39,8 @@ UnidadeConsumidora* Cliente::PesquisarUnidade(string endereco){
       return *it;
     }
   }
+  UnidadeConsumidora* nulo = nullptr;
+  return nulo;
 }
 
 
@@ -93,4 +95,6 @@ void Cliente::QuitarFaturaCliente(string endereco, int id){
   this->PesquisarUnidade(endereco)->PesquisarFatura(id)->quitarFatura();
   this->listaFaturasPagas.push_back(PesquisarUnidade(endereco)->PesquisarFatura(id));
 }
+
+
 

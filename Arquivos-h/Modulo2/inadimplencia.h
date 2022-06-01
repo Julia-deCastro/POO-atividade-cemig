@@ -3,7 +3,7 @@
 
 #include "./desligamento.h"
 
-class Inadiplencia:public Desligamento{
+class Inadimplencia:public Desligamento{
 
   public:
     void desligarUnidade(UnidadeConsumidora);
