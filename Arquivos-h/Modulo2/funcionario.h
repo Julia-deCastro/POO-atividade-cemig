@@ -16,9 +16,10 @@ class Funcionario{
     
   public:
 
-    void CadastrarFucnionario (string Nome, string ID);
+    void CadastrarFuncionario (string Nome, string ID);
     string getNome();
     string getID();
+    Servico servico;
     vector<Servico> listaServicos;
     void AdicionarServico(Servico, Data);
 

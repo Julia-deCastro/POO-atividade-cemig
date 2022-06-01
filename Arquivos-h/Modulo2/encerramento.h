@@ -6,7 +6,7 @@
 class Encerramento:public Desligamento{
 
   public:
-    void solicitadoEncerramento(UnidadeConsumidora);
+    void desligarUnidade(Data data, UnidadeConsumidora unidade) override;
 
 };
 

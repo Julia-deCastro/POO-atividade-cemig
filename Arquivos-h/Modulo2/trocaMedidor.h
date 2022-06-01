@@ -6,7 +6,7 @@
 class trocaMedidor:public Servico{
 
   public:
-    void(UnidadeConsumidora unidade, Data data);
+    void troca_medidor(UnidadeConsumidora unidade, Data data);
 };
 
 #endif

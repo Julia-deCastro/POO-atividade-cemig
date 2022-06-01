@@ -6,7 +6,7 @@
 class Inadimplencia:public Desligamento{
 
   public:
-    void desligarUnidade(UnidadeConsumidora);
+    void desligarUnidade(Data data, UnidadeConsumidora unidade) override;
 };
 
 #endif

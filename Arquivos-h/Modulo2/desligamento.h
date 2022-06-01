@@ -6,7 +6,7 @@
 class Desligamento:public Servico{
 
   public:
-    void desligarUnidade(UnidadeConsumidora);
+    virtual void desligarUnidade(Data data, UnidadeConsumidora unidade);
 
 };
 
