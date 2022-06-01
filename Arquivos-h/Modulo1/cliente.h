@@ -28,7 +28,7 @@ class Cliente {
 
   private:
     string nome;
-    bool inadiplente;
+    bool inadimplente;
     vector<Fatura*> listaFaturasPagas;
     
 };
