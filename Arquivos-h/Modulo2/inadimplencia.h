@@ -6,7 +6,7 @@
 class Inadimplencia:public Desligamento{
 
   public:
-    void desligarUnidade(string nomeFuncionario, string idFuncionario, UnidadeConsumidora unidade, Data data) override;
+    Servico desligarUnidade(string idFuncionario, UnidadeConsumidora unidade, Data data);
 };
 
 #endif

@@ -16,16 +16,17 @@ UnidadeConsumidora Servico::getUnidadeConsumidora(){
   return this->unidade;
 }
 
-Servico::Servico(string nomeFuncionario, string idFuncionario, Data data, UnidadeConsumidora unidconsm){
-    this->getFuncionario().CadastrarFucnionario(nomeFuncionario, idFuncionario);
-    this->data = data;
-    this->unidade = unidconsm;
-}
-
 Servico::Servico(){
   
 }
 
-Funcionario Servico::getFuncionario(){
-  return this->funcionario;
+Servico::Servico(string idFuncionario, Data data, UnidadeConsumidora unidconsm){
+    this->funcionarioId = idFuncionario;
+    this->data = data;
+    this->unidade = unidconsm;
 }
+
+
+// Funcionario Servico::getFuncionario(){
+//   return this->funcionario;
+// }

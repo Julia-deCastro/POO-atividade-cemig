@@ -16,6 +16,7 @@ class Funcionario{
     
   public:
 
+    Funcionario ();
     void CadastrarFuncionario (string Nome, string ID);
     string getNome();
     string getID();

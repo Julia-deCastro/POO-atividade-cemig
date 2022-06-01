@@ -3,11 +3,11 @@
 
 using namespace std;
 
-void Funcionario::CadastrarFucnionario(string nome, string ID){
+Funcionario::Funcionario(){}
 
+void Funcionario::CadastrarFuncionario(string nome, string ID){
   this->Nome = nome;
   this->ID = ID;
-  
 }
 
 string Funcionario::getNome(){
