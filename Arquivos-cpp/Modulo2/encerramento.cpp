@@ -3,6 +3,7 @@
 
 using namespace std;
 
-void Encerramento::solicitadoEncerramento(UnidadeConsumidora unidade){
+void Encerramento::desligarUnidade(Data data, UnidadeConsumidora unidade){
+  Servico(data, unidade);
   unidade.setAtivo(false);
 }

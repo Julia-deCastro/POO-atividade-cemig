@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void Leitura::RealizarLeitura(float leitura){
+void Leitura::RealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
+  Servico(data, unidade);
   this->LeituraConsumo = leitura;
 }
 

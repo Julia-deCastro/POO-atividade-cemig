@@ -3,7 +3,9 @@
 
 using namespace std;
 
-void Inadimplencia::desligarUnidade (UnidadeConsumidora unidade){
+void Inadimplencia::desligarUnidade(Data data, UnidadeConsumidora unidade){
+
+  Servico(data, unidade);
 
   if(unidade.getInadimplente() == false)
     unidade.setAtivo(false);
