@@ -68,4 +68,6 @@ Fatura* UnidadeConsumidora::PesquisarFatura(int id){
       return *it;
     }
   }
+  Fatura* nulo = nullptr;
+  return nulo;
 }

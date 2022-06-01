@@ -1,9 +1,9 @@
-#include "../../Arquivos-h/Modulo2/inadiplencia.h"
+#include "../../Arquivos-h/Modulo2/inadimplencia.h"
 #include <iostream>
 
 using namespace std;
 
-void Inadiplencia::desligarUnidade (UnidadeConsumidora unidade){
+void Inadimplencia::desligarUnidade (UnidadeConsumidora unidade){
 
   if(unidade.getInadimplente() == false)
     unidade.setAtivo(false);
