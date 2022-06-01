@@ -7,7 +7,7 @@ using namespace std;
 
 void Cliente::CadastrarCliente (string nome) {
   this->nome = nome;
-  this->inadiplente = false;
+  this->inadimplente = false;
 }
 
 void Cliente::AdicionarUnidade (string endereco){
@@ -68,7 +68,7 @@ string Cliente::getNome(){
 
 bool Cliente::getInadimplente(){
   
-  return this->inadiplente;
+  return this->inadimplente;
 
 }
 
