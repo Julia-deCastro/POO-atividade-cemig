@@ -5,14 +5,20 @@
 
 using namespace std;
 
-void Cliente::CadastrarCliente (string nome) {
+Cliente::Cliente (string nome) {
   this->nome = nome;
   this->inadimplente = false;
 }
 
-void Cliente::AdicionarUnidade (string endereco){
-  UnidadeConsumidora * u = new UnidadeConsumidora(endereco);
 
+Cliente::Cliente (string nome, Endereco end) {
+  this->nome = nome;
+  this->end = end;
+  this->inadimplente = false;
+}
+
+void Cliente::AdicionarUnidade (Endereco endereco){
+  UnidadeConsumidora * u = new UnidadeConsumidora(endereco);
   listaUnidades.push_back(u);
 }
   

@@ -14,11 +14,11 @@ class UnidadeConsumidora {
 
     public:
 
-        string getEndereco();
+        Endereco getEndereco();
         bool getAtivo();
         void setAtivo(bool);
         void imprimirListaFaturas();
-        UnidadeConsumidora(string endereco);
+        UnidadeConsumidora(Endereco endereco);
         UnidadeConsumidora();
         void ImprimirUnidadeConsumidora();
         vector<Fatura*> listaFaturas;       
@@ -29,9 +29,8 @@ class UnidadeConsumidora {
         
     private:
         bool inadimplente;
-        string endereco;
+        Endereco endereco;
         bool ativo;
-        Endereco end;
          
 };
 
