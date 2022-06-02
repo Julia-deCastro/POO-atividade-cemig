@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Funcionario::CadastrarFucnionario(string nome, string ID){
+void Funcionario::CadastrarFuncionario(string nome, string ID){
 
   this->Nome = nome;
   this->ID = ID;
@@ -30,4 +30,28 @@ void Funcionario::AdicionarServico(Servico servico, Data hoje){
 
   else
     cout << "Limite de serviços do dia atingido" << endl;
+}
+
+void Funcionario::FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
+  this->leitura.RealizarLeitura(leitura, data, unidade);
+  listaServicos.push_back(Leitura(data, unidade));
+}
+
+void Funcionario::FuncionarioRealizarLigacaoNova(Data data, UnidadeConsumidora unidade){
+  this->ligacao_nova.ligarUnidade(unidade, data);
+  listaServicos.push_back(LigacaoNova(data, unidade));
+}
+
+void Funcionario::FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade){
+  this->inadimplencia.desligarUnidade(data, unidade);
+  listaServicos.push_back(Inadimplencia(data, unidade));
+}
+
+void Funcionario::FuncionarioReligacaoPagamento(Data data, UnidadeConsumidora unidade){
+  this->religacao_pagamento.religarUnidade(unidade, data);
+  listaServicos.push_back(ReligacaoPagamento(data, unidade));
+}
+
+void Funcionario::FuncionarioTrocarMedidor(Data data, UnidadeConsumidora unidade){
+  listaServicos.push_back(trocaMedidor(data, unidade));
 }

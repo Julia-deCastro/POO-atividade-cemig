@@ -4,6 +4,11 @@
 using namespace std;
 
 void Encerramento::desligarUnidade(Data data, UnidadeConsumidora unidade){
-  Servico(data, unidade);
+  Encerramento(data, unidade);
   unidade.setAtivo(false);
+}
+
+Encerramento::Encerramento(Data data, UnidadeConsumidora unidade){
+  this->data = data;
+  this->unidade = unidade;
 }

@@ -20,6 +20,7 @@ class Endereco:public LocalizacaoGeografica{
 
   public:
 
+    Endereco(){};
     Endereco(string, int, string, string,string,string,string, LocalizacaoGeografica);
     void getEnderecoCompleto();
     string getLogradouro();
