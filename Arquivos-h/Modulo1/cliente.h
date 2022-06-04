@@ -17,8 +17,8 @@ class Cliente {
     Cliente(){};
     Cliente(string nome);
     Cliente(string nome, Endereco end);
-    void AdicionarUnidade (Endereco endereco);
-    float CalcularPagamento();
+    virtual void AdicionarUnidade (Endereco endereco);
+    virtual float CalcularPagamento();
     UnidadeConsumidora* PesquisarUnidade(Endereco endereco);
     string getNome();
     bool getInadimplente();

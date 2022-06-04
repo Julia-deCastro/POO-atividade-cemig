@@ -4,12 +4,12 @@
 using namespace std;
 
 void LigacaoNova::ligarUnidade(UnidadeConsumidora unidade, Data data) {
-  LigacaoNova(data, unidade);
+  Servico(data, unidade);
   bool ativo = true;
   unidade.setAtivo(ativo);
 }
 
-LigacaoNova::LigacaoNova(Data data, UnidadeConsumidora unidade){
-  this->data = data;
-  this->unidade = unidade;
-}
+// LigacaoNova::LigacaoNova(Data data, UnidadeConsumidora unidade){
+//   this->data = data;
+//   this->unidade = unidade;
+// }

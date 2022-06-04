@@ -34,12 +34,12 @@ void Funcionario::AdicionarServico(Servico servico, Data hoje){
 
 void Funcionario::FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
   this->leitura.RealizarLeitura(leitura, data, unidade);
-  listaServicos.push_back(Leitura(data, unidade));
+  listaServicos.push_back(Servico(data, unidade));
 }
 
 void Funcionario::FuncionarioRealizarLigacaoNova(Data data, UnidadeConsumidora unidade){
   this->ligacao_nova.ligarUnidade(unidade, data);
-  listaServicos.push_back(LigacaoNova(data, unidade));
+  listaServicos.push_back(Servico(data, unidade));
 }
 
 void Funcionario::FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade){

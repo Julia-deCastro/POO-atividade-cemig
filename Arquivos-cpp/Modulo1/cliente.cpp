@@ -38,7 +38,7 @@ float Cliente::CalcularPagamento(){
 }
 
 
-UnidadeConsumidora* Cliente::PesquisarUnidade(string endereco){
+UnidadeConsumidora* Cliente::PesquisarUnidade(Endereco endereco){
   vector<UnidadeConsumidora*>::iterator it;
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){
     if ((*it)->getEndereco() == endereco){
@@ -80,7 +80,7 @@ bool Cliente::getInadimplente(){
 
 }
 
-void Cliente::AdicionarFatura(Fatura *fat, string endereco){
+void Cliente::AdicionarFatura(Fatura *fat, Endereco endereco){
   vector<UnidadeConsumidora*>::iterator it;
   
   for (it = listaUnidades.begin(); it != listaUnidades.end(); it++){ 
@@ -91,16 +91,14 @@ void Cliente::AdicionarFatura(Fatura *fat, string endereco){
 }
 
 
-void Cliente::ImprimirFaturasDasUnidades(string end){
+void Cliente::ImprimirFaturasDasUnidades(Endereco end){
   
   PesquisarUnidade(end)->imprimirListaFaturas();
   
 }
 
-void Cliente::QuitarFaturaCliente(string endereco, int id){
+void Cliente::QuitarFaturaCliente(Endereco endereco, int id){
   this->PesquisarUnidade(endereco)->PesquisarFatura(id)->quitarFatura();
   this->listaFaturasPagas.push_back(PesquisarUnidade(endereco)->PesquisarFatura(id));
 }
-
-
 

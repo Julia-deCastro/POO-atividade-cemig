@@ -3,11 +3,6 @@
 
 using namespace std;
 
-void Leitura::RealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
-  Leitura(data, unidade);
-  this->LeituraConsumo = leitura;
-}
-
 float Leitura::ConsultarLeitura(){
   return this->LeituraConsumo;
 }
@@ -15,7 +10,12 @@ float Leitura::ConsultarLeitura(){
 Leitura::Leitura(){ 
 }
 
-Leitura::Leitura(Data data, UnidadeConsumidora unidade){
-  this->data = data;
-  this->unidade = unidade;
+void Leitura::RealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
+  Servico(data, unidade);
+  this->LeituraConsumo = leitura;
 }
+
+// Leitura::Leitura(Data data, UnidadeConsumidora unidade){
+//   this->data = data;
+//   this->unidade = unidade;
+// }
