@@ -13,7 +13,7 @@ void ReligacaoPagamento::religarUnidade(UnidadeConsumidora unidade, Data data){
   }
 }
 
-// ReligacaoPagamento::ReligacaoPagamento(Data data, UnidadeConsumidora unidade){
-//   this->data = data;
-//   this->unidade = unidade;
-// }
+ReligacaoPagamento::ReligacaoPagamento(Data data, UnidadeConsumidora unidade){
+   this->data = data;
+   this->unidade = unidade;
+}

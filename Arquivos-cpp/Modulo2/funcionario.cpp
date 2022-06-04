@@ -17,6 +17,30 @@ string Funcionario::getID(){
   return this->ID;
 }
 
+Leitura Funcionario::getLeitura() { //verificar
+  return this->leitura;
+}
+
+Inadimplencia Funcionario::getInadimplencia() { //verificar
+  return this->inadimplencia;
+}
+
+Encerramento Funcionario::getEncerramento() { //verificar
+  return this->encerramento;
+}
+
+LigacaoNova Funcionario::getLigacaoNova() { //verificar
+  return this->ligacao_nova;
+}
+
+trocaMedidor Funcionario::gettrocaMedidor() { //verificar
+  return this->troca_medidor;
+}
+
+ReligacaoPagamento Funcionario::getReligacaoPagamento() { //verificar
+  return this->religacao_pagamento;
+}
+
 void Funcionario::AdicionarServico(Servico servico, Data hoje){
   int numServicos = 0;
   
@@ -32,23 +56,27 @@ void Funcionario::AdicionarServico(Servico servico, Data hoje){
     cout << "Limite de serviços do dia atingido" << endl;
 }
 
-void Funcionario::FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade){
-  this->leitura.RealizarLeitura(leitura, data, unidade);
+void Funcionario::FuncionarioRealizarLeitura(float leitura1, Data data, UnidadeConsumidora unidade){ //letura1 para nao causar conflito com o leitura
+  Leitura leitura = getLeitura();
+  leitura.RealizarLeitura(leitura1, data, unidade); //ou this->leitura.RealizarLeitura(leitura1, data, unidade); 
   listaServicos.push_back(Servico(data, unidade));
 }
 
 void Funcionario::FuncionarioRealizarLigacaoNova(Data data, UnidadeConsumidora unidade){
-  this->ligacao_nova.ligarUnidade(unidade, data);
+  LigacaoNova ligacao_nova = getLigacaoNova();
+  ligacao_nova.ligarUnidade(unidade, data);
   listaServicos.push_back(Servico(data, unidade));
 }
 
 void Funcionario::FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade){
-  this->inadimplencia.desligarUnidade(data, unidade);
+  Inadimplencia inadimplencia = getInadimplencia();
+  inadimplencia.desligarUnidade(data, unidade);
   listaServicos.push_back(Inadimplencia(data, unidade));
 }
 
 void Funcionario::FuncionarioReligacaoPagamento(Data data, UnidadeConsumidora unidade){
-  this->religacao_pagamento.religarUnidade(unidade, data);
+  ReligacaoPagamento religacao_pagamento = getReligacaoPagamento();
+  religacao_pagamento.religarUnidade(unidade, data);
   listaServicos.push_back(ReligacaoPagamento(data, unidade));
 }
 

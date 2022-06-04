@@ -3,11 +3,11 @@
 
 using namespace std;
 
-/*
+
 void Servico::RegistraServico(Data data, UnidadeConsumidora unidade){
   this->data = data;
   this->unidade = unidade;
-}*/
+}
 
 Data Servico::getData(){
   return this->data;

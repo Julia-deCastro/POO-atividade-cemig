@@ -9,7 +9,7 @@ void LigacaoNova::ligarUnidade(UnidadeConsumidora unidade, Data data) {
   unidade.setAtivo(ativo);
 }
 
-// LigacaoNova::LigacaoNova(Data data, UnidadeConsumidora unidade){
-//   this->data = data;
-//   this->unidade = unidade;
-// }
+ LigacaoNova::LigacaoNova(Data data, UnidadeConsumidora unidade){
+   this->data = data;
+   this->unidade = unidade;
+ }

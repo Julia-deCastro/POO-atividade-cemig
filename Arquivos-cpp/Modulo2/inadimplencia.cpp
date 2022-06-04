@@ -12,8 +12,8 @@ void Inadimplencia::desligarUnidade(Data data, UnidadeConsumidora unidade){
   
 }
 
-// Inadimplencia::Inadimplencia(Data data, UnidadeConsumidora unidade){
-//   this->data = data;
-//   this->unidade = unidade;
-// }
+ Inadimplencia::Inadimplencia(Data data, UnidadeConsumidora unidade){ //adicionei em inadimp.h os atributos
+   this->data = data;
+   this->unidade = unidade;
+ }
 

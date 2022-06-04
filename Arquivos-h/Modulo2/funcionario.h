@@ -19,20 +19,28 @@ class Funcionario{
   private:
     string Nome;
     string ID;
-    
-  public:
-
-    void CadastrarFuncionario (string Nome, string ID);
-    string getNome();
-    string getID();
     Leitura leitura;
     Inadimplencia inadimplencia;
     Encerramento encerramento;
     LigacaoNova ligacao_nova;
     trocaMedidor troca_medidor;
     ReligacaoPagamento religacao_pagamento;
+    
 
+  public:
+
+    string getNome();
+    string getID();
+    Leitura getLeitura();
+    Inadimplencia getInadimplencia();
+    Encerramento getEncerramento();
+    LigacaoNova getLigacaoNova();
+    trocaMedidor gettrocaMedidor();
+    ReligacaoPagamento getReligacaoPagamento();
+    
     vector<Servico> listaServicos;
+
+    void CadastrarFuncionario (string Nome, string ID);
     void AdicionarServico(Servico, Data);
     void FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade);
     void FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade);

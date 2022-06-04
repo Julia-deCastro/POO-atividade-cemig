@@ -7,9 +7,12 @@ class Leitura:public Servico{
 
   private:
     float LeituraConsumo;
-
+    Data data;
+    UnidadeConsumidora unidade;
+    
   public:
-    Leitura();
+    Leitura() {};
+    Leitura(Data data, UnidadeConsumidora unidade) {};
     void RealizarLeitura(float leitura, Data, UnidadeConsumidora);
     float ConsultarLeitura();
 
