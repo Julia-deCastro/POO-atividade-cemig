@@ -11,7 +11,7 @@ std::string cep, std::string cidade ,std::string estado, LocalizacaoGeografica l
     this->numero = numero;
     this->bairro = bairro;
     this->complemento = complemento;
-    this->CEP = cep;
+    this->cep = cep;
     this->cidade = cidade;
     this->estado = estado;
     this->setLatitude(local.getLatitude());
@@ -40,8 +40,8 @@ string Endereco::getComplemento(){
     return this->complemento;
 }
 
-string Endereco::getCEP(){
-    return this->CEP;
+string Endereco::getCep(){
+    return this->cep;
 }
 
 string Endereco::getCidade(){
@@ -49,5 +49,10 @@ string Endereco::getCidade(){
 }
 
 string Endereco::getEstado(){
-    return estado;
+    return this->estado;
 }
+
+LocalizacaoGeografica Endereco::getLocal(){
+    return LocalizacaoGeografica(this-> getLatitude(), this->getLongitude());
+}
+
