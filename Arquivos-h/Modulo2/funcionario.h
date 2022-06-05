@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "./servico.h"
+#include "./usuario.h"
 #include "../../Arquivos-h/Geral/Data.h"
 #include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
 #include "../../Arquivos-h/Modulo2/leitura.h"
@@ -14,7 +15,7 @@
 
 using namespace std;
 
-class Funcionario{
+class Funcionario : public Usuario {
 
   private:
     string Nome;

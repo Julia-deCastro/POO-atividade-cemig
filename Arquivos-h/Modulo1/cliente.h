@@ -3,13 +3,14 @@
 
 #include "unidadeConsumidora.h"
 #include "fatura.h"
+#include "../Modulo2/usuario.h"
 #include "../Geral/endereco.h"
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Cliente {
+class Cliente : public Usuario {
        
   
   public:

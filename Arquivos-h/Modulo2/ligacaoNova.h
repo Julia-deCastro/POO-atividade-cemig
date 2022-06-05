@@ -10,7 +10,7 @@ class LigacaoNova : public Servico{
     UnidadeConsumidora unidade;
 
   public:
-    LigacaoNova() {};
+    LigacaoNova();
     LigacaoNova(Data data, UnidadeConsumidora unidade) {};
     void ligarUnidade(UnidadeConsumidora, Data);
 };

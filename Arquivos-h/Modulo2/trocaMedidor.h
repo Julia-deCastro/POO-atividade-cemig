@@ -10,7 +10,7 @@ class trocaMedidor:public Servico{
     UnidadeConsumidora unidade;
 
   public:
-    void trocaMedidor::troca_medidor(UnidadeConsumidora unidade, Data data);
+    trocaMedidor();
     trocaMedidor(Data data, UnidadeConsumidora unidade);
 };
 
