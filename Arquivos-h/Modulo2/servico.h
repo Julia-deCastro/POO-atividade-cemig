@@ -9,11 +9,13 @@
 
 class Servico{
 
-  private:
-    Data data;
-    UnidadeConsumidora unidade;
+  protected:
+    
+
 
   public:
+    Data data;
+    UnidadeConsumidora unidade;
     void RegistraServico(Data data, UnidadeConsumidora unidade);
     Servico(Data, UnidadeConsumidora);
     Servico();

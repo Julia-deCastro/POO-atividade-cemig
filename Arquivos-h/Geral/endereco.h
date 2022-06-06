@@ -4,6 +4,8 @@
 #include <iostream>
 #include "localizacaoGeografica.h"
 
+
+
 using namespace std;
 
 class Endereco:public LocalizacaoGeografica{
@@ -21,7 +23,7 @@ class Endereco:public LocalizacaoGeografica{
   public:
 
     Endereco(){};
-    Endereco(string, int, string, string,string,string,string, LocalizacaoGeografica);
+    Endereco(string, int, string, string,string,string,string, int, int);
     void getEnderecoCompleto();
     string getLogradouro();
     int getNumero();
@@ -31,6 +33,7 @@ class Endereco:public LocalizacaoGeografica{
     string getCidade();
     string getEstado();
     LocalizacaoGeografica getLocal();
+    void imprimirEndereco();
 
     bool operator == (Endereco end){
     if (

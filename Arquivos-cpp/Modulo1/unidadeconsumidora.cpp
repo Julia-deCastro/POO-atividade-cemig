@@ -21,11 +21,11 @@ void UnidadeConsumidora::imprimirListaFaturas(){
   }
 }
 void UnidadeConsumidora::ImprimirUnidadeConsumidora(){
-  cout << this->getEndereco() << "(";
+  this->getEndereco().imprimirEndereco();
   if(this->getAtivo())
-    cout << "Ativo)" <<endl;
+    cout << "(Ativo)" <<endl;
   else
-    cout << "Desativado)" <<endl;
+    cout << "(Desativado)" <<endl;
   for(Fatura* it : listaFaturas){
     it->imprimirFatura();
   }

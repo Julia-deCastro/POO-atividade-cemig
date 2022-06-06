@@ -9,7 +9,7 @@ using namespace std;
 
 const float taxaJurosMensal = 0.05;
 
-Data hoje(){
+/* Data hoje(){
   
   Data hoje (0,0,0,0,0,0);
   
@@ -18,12 +18,12 @@ Data hoje(){
   hoje.setAno(2022); 
 
   return hoje;
-}
+} */
 
 
 int main() {
   
-  Data dataHoje = hoje();
+  /* Data dataHoje = hoje();
   Cliente *Julia = new Cliente("Julia");
 
   std::cout << endl << "Cliente 1: "<< (*Julia).getNome() << std::endl;
@@ -41,9 +41,9 @@ int main() {
   Leitura jan;
   jan.RealizarLeitura(500, dataHoje, *(*Julia).PesquisarUnidade((*end)));
   Data vencJan(2022,05,05,0,0,0);
-  Fatura * Janeiro= new Fatura(200, jan.ConsultarLeitura(),vencJan);
+  Fatura * Janeiro= new Fatura(200, jan.ConsultarLeitura(),vencJan); */
   /* Janeiro->quitarFatura(); */
-  (*Julia).AdicionarFatura(Janeiro, (*end));
+ /*  (*Julia).AdicionarFatura(Janeiro, (*end));
   (*Julia).QuitarFaturaCliente((*end),1);
   
   Leitura fev;
@@ -57,7 +57,7 @@ int main() {
   cout << "Pagamento pendente: " << (*Julia).CalcularPagamento() << endl;
   cout << endl;
 
-  (*Julia).ImprimeListaFaturasPagas();
+  (*Julia).ImprimeListaFaturasPagas(); */
 
   return 0;
 }
