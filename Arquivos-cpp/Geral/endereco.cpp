@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Endereco::Endereco(string logradouro, int numero, string bairro, string complemento, 
+Endereco::Endereco(string logradouro, int numero, string complemento, string bairro, 
 string cep, string cidade ,string estado, int latitude, int longitude){
 
     this->logradouro = logradouro;

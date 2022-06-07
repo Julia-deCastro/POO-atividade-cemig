@@ -41,13 +41,15 @@ class Funcionario : public Usuario {
     
     vector<Servico> listaServicos;
 
-    void CadastrarFuncionario (string Nome, string ID);
+    Funcionario(string Nome);
     void AdicionarServico(Servico, Data);
     void FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade);
     void FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade);
     void FuncionarioRealizarLigacaoNova(Data data, UnidadeConsumidora unidade);
     void FuncionarioReligacaoPagamento(Data data, UnidadeConsumidora unidade);
     void FuncionarioTrocarMedidor(Data data, UnidadeConsumidora unidade);
+    int NumeroServicos();
+    static int cont_id; 
 
 };
 #endif

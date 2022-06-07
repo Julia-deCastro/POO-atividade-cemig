@@ -2,12 +2,14 @@
 #include <iostream>
 
 using namespace std;
+int::Funcionario::cont_id = 0;
 
-void Funcionario::CadastrarFuncionario(string nome, string ID){
+Funcionario::Funcionario(string nome){
 
+  cont_id++;
   this->Nome = nome;
-  this->ID = ID;
-  
+  this->ID = cont_id;
+
 }
 
 string Funcionario::getNome(){
@@ -82,4 +84,8 @@ void Funcionario::FuncionarioReligacaoPagamento(Data data, UnidadeConsumidora un
 
 void Funcionario::FuncionarioTrocarMedidor(Data data, UnidadeConsumidora unidade){
   listaServicos.push_back(trocaMedidor(data, unidade));
+}
+
+int Funcionario::NumeroServicos(){
+  return this->listaServicos.size();
 }
