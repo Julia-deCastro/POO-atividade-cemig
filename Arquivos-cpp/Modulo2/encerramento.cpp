@@ -12,3 +12,7 @@ Encerramento::Encerramento(Data data, UnidadeConsumidora unidade){
   this->data = data;
   this->unidade = unidade;
 }
+
+Encerramento::Encerramento(){
+  
+}

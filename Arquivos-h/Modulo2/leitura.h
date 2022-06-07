@@ -12,7 +12,6 @@ class Leitura:public Servico{
     
   public:
     Leitura();
-    // Leitura(Data data, UnidadeConsumidora unidade) {};
     void RealizarLeitura(float leitura, Data, UnidadeConsumidora);
     float ConsultarLeitura();
 

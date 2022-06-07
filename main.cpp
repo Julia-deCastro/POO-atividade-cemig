@@ -10,7 +10,7 @@ using namespace std;
 
 const float taxaJurosMensal = 0.05;
 
-  Data hoje(){
+Data today(){
   
   Data hoje (0,0,0,0,0,0);
   
@@ -24,7 +24,7 @@ const float taxaJurosMensal = 0.05;
 
 int main() {
   
-  Data dataHoje = hoje();
+  Data dataHoje = today();
   Cliente Julia = Cliente("Julia");
 
   cout << endl << "Cliente 1: "<< Julia.getNome() << endl;
@@ -39,12 +39,6 @@ int main() {
   
   Julia.ImprimeListaUnidades();
   cout << endl;
-
-
-
-
-
-
 
   Funcionario Joao = Funcionario("Joao");
   Joao.FuncionarioRealizarLeitura(1000, dataHoje, *(Julia.PesquisarUnidade(end1)));

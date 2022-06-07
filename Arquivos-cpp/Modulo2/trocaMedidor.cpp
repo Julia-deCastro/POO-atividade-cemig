@@ -8,3 +8,7 @@ trocaMedidor::trocaMedidor(Data data, UnidadeConsumidora unidade){ //identificar
     this->data = data;
     this->unidade = unidade;
 }
+
+trocaMedidor::trocaMedidor(){
+    
+}

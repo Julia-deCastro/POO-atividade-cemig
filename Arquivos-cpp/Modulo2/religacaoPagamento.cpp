@@ -17,3 +17,7 @@ ReligacaoPagamento::ReligacaoPagamento(Data data, UnidadeConsumidora unidade){
    this->data = data;
    this->unidade = unidade;
 }
+
+ReligacaoPagamento::ReligacaoPagamento(){
+  
+}

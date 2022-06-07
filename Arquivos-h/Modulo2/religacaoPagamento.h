@@ -12,6 +12,8 @@ class ReligacaoPagamento:public Servico{
   public:
     ReligacaoPagamento(Data data, UnidadeConsumidora unidade);
     void religarUnidade(UnidadeConsumidora, Data);
+    ReligacaoPagamento();
+
 };
 
 #endif

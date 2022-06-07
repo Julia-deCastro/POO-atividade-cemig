@@ -42,6 +42,7 @@ class Funcionario : public Usuario {
     vector<Servico> listaServicos;
 
     Funcionario(string Nome);
+    Funcionario(){}
     void AdicionarServico(Servico, Data);
     void FuncionarioRealizarLeitura(float leitura, Data data, UnidadeConsumidora unidade);
     void FuncionarioRegistrarInadimplente(Data data, UnidadeConsumidora unidade);

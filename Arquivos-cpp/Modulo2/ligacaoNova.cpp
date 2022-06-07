@@ -15,3 +15,7 @@ void LigacaoNova::ligarUnidade(UnidadeConsumidora unidade, Data data) {
 //    this->data = data;
 //    this->unidade = unidade;
 //  }
+
+LigacaoNova::LigacaoNova(){
+  
+}

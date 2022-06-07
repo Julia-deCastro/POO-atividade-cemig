@@ -15,7 +15,6 @@ void Leitura::RealizarLeitura(float leitura, Data data, UnidadeConsumidora unida
   this->LeituraConsumo = leitura;
 }
 
-//  Leitura::Leitura(Data data, UnidadeConsumidora unidade){
-//    this->data = data;
-//    this->unidade = unidade;
-//  }
+Leitura::Leitura(){
+
+}
