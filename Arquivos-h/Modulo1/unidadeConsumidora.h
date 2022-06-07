@@ -10,28 +10,29 @@
 
 using namespace std;
 
-class UnidadeConsumidora {
+class UnidadeConsumidora
+{
 
-    public:
+public:
+    Endereco getEndereco();
+    bool getAtivo();
+    void setAtivo(bool);
+    void imprimirListaFaturas();
+    UnidadeConsumidora(Endereco endereco);
+    UnidadeConsumidora();
+    void ImprimirUnidadeConsumidora();
+    bool getInadimplente();
+    void verificaInadimplente();
+    void AdicionarFaturaUnidade(Fatura *fat);
+    Fatura *PesquisarFatura(int id);
+    vector<Fatura *>::iterator getListaFaturasBegin();
+    vector<Fatura *>::iterator getListaFaturasEnd();
 
-        Endereco getEndereco();
-        bool getAtivo();
-        void setAtivo(bool);
-        void imprimirListaFaturas();
-        UnidadeConsumidora(Endereco endereco);
-        UnidadeConsumidora();
-        void ImprimirUnidadeConsumidora();
-        vector<Fatura*> listaFaturas;       
-        bool getInadimplente();
-        void verificaInadimplente();
-        void AdicionarFaturaUnidade(Fatura * fat);
-        Fatura* PesquisarFatura(int id);
-        
-    private:
-        bool inadimplente;
-        Endereco endereco;
-        bool ativo;
-         
+private:
+    bool inadimplente;
+    Endereco endereco;
+    bool ativo;
+    vector<Fatura *> listaFaturas;
 };
 
 #endif

@@ -28,7 +28,7 @@ float Cliente::CalcularPagamento(){
   
   float valor = 0;
   for (i=listaUnidades.begin(); i!=listaUnidades.end(); i++) {
-    for(j=(*i)->listaFaturas.begin(); j!=(*i)->listaFaturas.end(); j++){
+    for(j=(*i)->getListaFaturasBegin(); j!=(*i)->getListaFaturasEnd(); j++){
       if((*j)->getQuitado() == false){
         valor += (*j)->getValorFatura() + (*j)->calcularJuros();
       }

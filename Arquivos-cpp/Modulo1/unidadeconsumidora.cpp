@@ -71,3 +71,11 @@ Fatura* UnidadeConsumidora::PesquisarFatura(int id){
   Fatura* nulo = nullptr;
   return nulo;
 }
+
+vector<Fatura *>::iterator UnidadeConsumidora::getListaFaturasBegin(){
+  return this->listaFaturas.begin();
+}
+
+vector<Fatura *>::iterator UnidadeConsumidora::getListaFaturasEnd(){
+  return this->listaFaturas.end();
+}
