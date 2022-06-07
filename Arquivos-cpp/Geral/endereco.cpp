@@ -3,10 +3,11 @@
 #include <iostream>
 
 using namespace std;
+int::Endereco::contIdEnderenco = 0;
 
 Endereco::Endereco(string logradouro, int numero, string complemento, string bairro, 
 string cep, string cidade ,string estado, int latitude, int longitude){
-
+    contIdEnderenco++;
     this->logradouro = logradouro;
     this->numero = numero;
     this->bairro = bairro;
@@ -14,6 +15,7 @@ string cep, string cidade ,string estado, int latitude, int longitude){
     this->cep = cep;
     this->cidade = cidade;
     this->estado = estado;
+    this->idEndereco = contIdEnderenco;
     this->setLatitude(latitude);
     this->setLongitude(longitude);
 }
@@ -22,6 +24,10 @@ void Endereco::getEnderecoCompleto(){
 
     cout << logradouro << ", " << numero << ", " << bairro << ", " << complemento << ", " << cep << ", " << cidade << ", " << estado;
 
+}
+
+int Endereco::getIdEndereco() {
+    return this->idEndereco;
 }
 
 string Endereco::getLogradouro(){
@@ -57,14 +63,13 @@ LocalizacaoGeografica Endereco::getLocal(){
 }
 
 void Endereco::imprimirEndereco(){
-    cout << this->getLogradouro() << endl;
-    cout << this->getNumero() << endl;
-    cout << this->getComplemento() << endl;
-    cout << this->getBairro() << endl;
-    cout << this->getCep() << endl;
-    cout << this->getCidade() << endl;
-    cout << this->getEstado() << endl;
-    cout << this->getLocal().getLatitude() << endl;
-    cout << this->getLocal().getLongitude() << endl;
+    cout << "\n" << "Logradouro: " << this->getLogradouro() << endl;
+    cout << "Número: " << this->getNumero() << endl;
+    cout << "Complemento: " << this->getComplemento() << endl;
+    cout << "Bairro: " << this->getBairro() << endl;
+    cout << "CEP: " << this->getCep() << endl;
+    cout << "Cidade: " << this->getCidade() << endl;
+    cout << "Estado: " << this->getEstado() << endl;
+    cout << "Latitude: " << this->getLocal().getLatitude() << " Longitude: " << this->getLocal().getLongitude() << endl;
 }
 

@@ -26,7 +26,7 @@ class Funcionario : public Usuario {
     LigacaoNova ligacao_nova;
     trocaMedidor troca_medidor;
     ReligacaoPagamento religacao_pagamento;
-    
+    static int cont_id; 
 
   public:
 
@@ -50,7 +50,7 @@ class Funcionario : public Usuario {
     void FuncionarioReligacaoPagamento(Data data, UnidadeConsumidora unidade);
     void FuncionarioTrocarMedidor(Data data, UnidadeConsumidora unidade);
     int NumeroServicos();
-    static int cont_id; 
+   
 
 };
 #endif
