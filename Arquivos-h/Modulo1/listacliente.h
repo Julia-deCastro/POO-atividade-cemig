@@ -8,10 +8,11 @@
 
 class Lista_Cliente{
 
-    public:
+    private:
         std::vector <Cliente> listaCliente;
         std::vector <Cliente> listainadimplentes;
 
+    public:
         void AdicionarCliente(Cliente cliente);
         void Adicionarinadimplente(Cliente cliente);
         void RemoverCliente(Cliente cliente);

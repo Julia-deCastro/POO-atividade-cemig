@@ -26,6 +26,7 @@ class Funcionario : public Usuario {
     LigacaoNova ligacao_nova;
     trocaMedidor troca_medidor;
     ReligacaoPagamento religacao_pagamento;
+    vector<Servico> listaServicos;
     static int cont_id; 
 
   public:
@@ -38,8 +39,6 @@ class Funcionario : public Usuario {
     LigacaoNova getLigacaoNova();
     trocaMedidor gettrocaMedidor();
     ReligacaoPagamento getReligacaoPagamento();
-    
-    vector<Servico> listaServicos;
 
     Funcionario(string Nome);
     Funcionario(){}

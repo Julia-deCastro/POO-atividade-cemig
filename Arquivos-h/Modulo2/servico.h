@@ -10,16 +10,13 @@
 class Servico{
 
   protected:
-    
-
+    Data data;
+    UnidadeConsumidora unidade; 
 
   public:
-    Data data;
-    UnidadeConsumidora unidade;
     void RegistraServico(Data data, UnidadeConsumidora unidade);
     Servico(Data, UnidadeConsumidora);
     Servico();
-    //void RegistraServico(Data,UnidadeConsumidora);
     Data getData();
     UnidadeConsumidora getUnidadeConsumidora();
 
