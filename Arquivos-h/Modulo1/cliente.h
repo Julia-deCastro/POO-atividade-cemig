@@ -26,12 +26,12 @@ class Cliente : public Usuario {
     Endereco getEndereco();
     void ImprimeListaFaturasPagas();
     void ImprimeListaUnidades();
-    vector<UnidadeConsumidora*> listaUnidades;
     void AdicionarFatura(Fatura *fat, Endereco Endereco);
     void ImprimirFaturasDasUnidades(Endereco Endereco);
     void QuitarFaturaCliente(Endereco endereco, int id); 
 
   private:
+    vector<UnidadeConsumidora*> listaUnidades;
     string nome;
     bool inadimplente;
     vector<Fatura*> listaFaturasPagas;
