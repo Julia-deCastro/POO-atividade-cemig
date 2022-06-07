@@ -1,7 +1,7 @@
 #include "../../Arquivos-h/Modulo1/unidadeConsumidora.h"
 #include <list>
 
-UnidadeConsumidora::UnidadeConsumidora(string endereco){
+UnidadeConsumidora::UnidadeConsumidora(Endereco endereco){
   this->endereco = endereco;
   this->ativo = true;
   this->inadimplente = false;
@@ -11,7 +11,7 @@ bool UnidadeConsumidora::getAtivo(){
   return this->ativo;
 }
 
-string UnidadeConsumidora::getEndereco(){
+Endereco UnidadeConsumidora::getEndereco(){
   return this->endereco;
 }
 
@@ -21,11 +21,11 @@ void UnidadeConsumidora::imprimirListaFaturas(){
   }
 }
 void UnidadeConsumidora::ImprimirUnidadeConsumidora(){
-  cout << this->getEndereco()<< "(";
+  this->getEndereco().imprimirEndereco();
   if(this->getAtivo())
-    cout << "Ativo)" <<endl;
+    cout << "(Ativo)" <<endl;
   else
-    cout << "Desativado)" <<endl;
+    cout << "(Desativado)" <<endl;
   for(Fatura* it : listaFaturas){
     it->imprimirFatura();
   }

@@ -4,6 +4,7 @@
 #include "fatura.h"
 #include "../Geral/Data.h"
 #include "../Geral/ExecaoCustomizada.h"
+#include "../Geral/endereco.h"
 #include <iostream>
 #include <vector>
 
@@ -13,11 +14,11 @@ class UnidadeConsumidora {
 
     public:
 
-        string getEndereco();
+        Endereco getEndereco();
         bool getAtivo();
         void setAtivo(bool);
         void imprimirListaFaturas();
-        UnidadeConsumidora(string endereco);
+        UnidadeConsumidora(Endereco endereco);
         UnidadeConsumidora();
         void ImprimirUnidadeConsumidora();
         vector<Fatura*> listaFaturas;       
@@ -28,8 +29,9 @@ class UnidadeConsumidora {
         
     private:
         bool inadimplente;
-        string endereco;
-        bool ativo; 
+        Endereco endereco;
+        bool ativo;
+         
 };
 
 #endif
