@@ -1,7 +1,14 @@
 #ifndef ELETRICISTA_H
 #define ELETRICISTA_H
 
-class Eletricista {
+#include "./funcionario.h"
+
+class Eletricista : public Funcionario {
+
+    private:
+        
+
+    public:
 
 };
 

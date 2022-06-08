@@ -1,8 +1,15 @@
 #ifndef LEITURISTA_H
 #define LEITURISTA_H
 
-class Leiturista {
+#include "./funcionario.h"
 
+class Leiturista : public Funcionario {
+
+    private:
+    
+
+
+    public:
 };
 
 #endif
