@@ -3,31 +3,27 @@
 #include <iostream>
 
 using namespace std;
-int::Endereco::contIdEnderenco = 0;
 
-Endereco::Endereco(string logradouro, int numero, string complemento, string bairro, 
-string cep, string cidade ,string estado, int latitude, int longitude){
-    contIdEnderenco++;
+Endereco::Endereco(){};
+
+Endereco::Endereco(std::string logradouro, int numero, std::string bairro, std::string complemento, 
+std::string cep, std::string cidade ,std::string estado, LocalizacaoGeografica local){
+
     this->logradouro = logradouro;
     this->numero = numero;
     this->bairro = bairro;
     this->complemento = complemento;
-    this->cep = cep;
+    this->CEP = cep;
     this->cidade = cidade;
     this->estado = estado;
-    this->idEndereco = contIdEnderenco;
-    this->setLatitude(latitude);
-    this->setLongitude(longitude);
+    this->setLatitude(local.getLatitude());
+    this->setLongitude(local.getLongitude());
 }
 
 void Endereco::getEnderecoCompleto(){
 
-    cout << logradouro << ", " << numero << ", " << bairro << ", " << complemento << ", " << cep << ", " << cidade << ", " << estado;
+    cout << logradouro << ", " << numero << ", " << bairro << ", " << complemento << ", " << CEP << ", " << cidade << ", " << estado;
 
-}
-
-int Endereco::getIdEndereco() {
-    return this->idEndereco;
 }
 
 string Endereco::getLogradouro(){
@@ -46,8 +42,8 @@ string Endereco::getComplemento(){
     return this->complemento;
 }
 
-string Endereco::getCep(){
-    return this->cep;
+string Endereco::getCEP(){
+    return this->CEP;
 }
 
 string Endereco::getCidade(){
@@ -55,21 +51,5 @@ string Endereco::getCidade(){
 }
 
 string Endereco::getEstado(){
-    return this->estado;
+    return estado;
 }
-
-LocalizacaoGeografica Endereco::getLocal(){
-    return LocalizacaoGeografica(this-> getLatitude(), this->getLongitude());
-}
-
-void Endereco::imprimirEndereco(){
-    cout << "\n" << "Logradouro: " << this->getLogradouro() << endl;
-    cout << "Número: " << this->getNumero() << endl;
-    cout << "Complemento: " << this->getComplemento() << endl;
-    cout << "Bairro: " << this->getBairro() << endl;
-    cout << "CEP: " << this->getCep() << endl;
-    cout << "Cidade: " << this->getCidade() << endl;
-    cout << "Estado: " << this->getEstado() << endl;
-    cout << "Latitude: " << this->getLocal().getLatitude() << " Longitude: " << this->getLocal().getLongitude() << endl;
-}
-

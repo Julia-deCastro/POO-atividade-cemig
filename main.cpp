@@ -24,15 +24,16 @@ Data today(){
 
 int main() {
   
+  /*
   Data dataHoje = today();
   Cliente Julia = Cliente("Julia");
 
   cout << endl << "Cliente 1: "<< Julia.getNome() << endl;
 
-  Endereco end1 = Endereco("Rua 34", 20, "1200", "Time Square", "10001", "NYC", "NY", 20, 50);
-  Endereco end2 = Endereco("Rua dos bobos", 0, "s/", "Concordia", "3110110", "BH", "MG", 30, 44);
-  Julia.AdicionarUnidade(end1);
-  Julia.AdicionarUnidade(end2);
+  //Endereco end1 = Endereco("Rua 34", 20, "1200", "Time Square", "10001", "NYC", "NY", 20, 50);
+  //Endereco end2 = Endereco("Rua dos bobos", 0, "s/", "Concordia", "3110110", "BH", "MG", 30, 44);
+  //Julia.AdicionarUnidade(end1);
+  //Julia.AdicionarUnidade(end2);
   
 
    cout << "---------- Lista Unidades de Julia ----------" << endl;
@@ -41,8 +42,8 @@ int main() {
   cout << endl;
 
   Funcionario Joao = Funcionario("Joao");
-  Joao.FuncionarioRealizarLeitura(1000, dataHoje, *(Julia.PesquisarUnidade(end1)));
-  Joao.FuncionarioTrocarMedidor(dataHoje, *(Julia.PesquisarUnidade(end1)));
+  //Joao.FuncionarioRealizarLeitura(1000, dataHoje, *(Julia.PesquisarUnidade(end1)));
+  //Joao.FuncionarioTrocarMedidor(dataHoje, *(Julia.PesquisarUnidade(end1)));
   cout << "Número de serviços de Joao:" << Joao.NumeroServicos() << endl; 
 
 
@@ -67,4 +68,6 @@ int main() {
   Julia.ImprimeListaFaturasPagas();
 
   return 0;
+
+*/
 }
