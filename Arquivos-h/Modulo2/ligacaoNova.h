@@ -3,16 +3,11 @@
 
 #include "./servico.h"
 
-class LigacaoNova : public Servico{
-  
-  private:
-    Data data;
-    UnidadeConsumidora unidade;
+class LigacaoNova:public Servico{
 
   public:
-    LigacaoNova();
-    LigacaoNova(Data data, UnidadeConsumidora unidade) {};
-    void ligarUnidade(UnidadeConsumidora, Data);
+    void ligarUnidade(UnidadeConsumidora);
+    UnidadeConsumidora getUnidadeConsumidora();
 };
 
 #endif

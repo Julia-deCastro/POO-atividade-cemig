@@ -3,17 +3,11 @@
 
 #include "./servico.h"
 
-class ReligacaoPagamento:public Servico{
+class ReligacaoPagamento : public Servico {
 
-  private:
-    Data data;
-    UnidadeConsumidora unidade;
-
-  public:
-    ReligacaoPagamento(Data data, UnidadeConsumidora unidade);
-    void religarUnidade(UnidadeConsumidora, Data);
-    ReligacaoPagamento();
-
+public:
+  void religarUnidade(UnidadeConsumidora);
+  UnidadeConsumidora getUnidadeConsumidora();
 };
 
 #endif

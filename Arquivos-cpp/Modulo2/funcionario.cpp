@@ -11,6 +11,7 @@ void Funcionario::CadastrarFuncionario(string nome, string id){
   this->permissao.adicionarPermissao("setID");
   this->permissao.adicionarPermissao("getNome");
   this->permissao.adicionarPermissao("AdicionarServico");
+  this->permissao.adicionarPermissao("getPermissao");
 }
 
 void Funcionario::setNome(string nome){
@@ -33,27 +34,13 @@ string Funcionario::getNome(){
     throw Erro("Permissao negada");
   return this->nome;
 }
+Permissao Funcionario::getPermissao(){
+  if(this->permissao.verificaPermissao("getPermissao") == false)
+    throw Erro("Permissao negada");
+  return this->permissao;
+}
 string Funcionario::getID(){
   if(this->permissao.verificaPermissao("getID") == false)
     throw Erro("Permissao negada");  
   return this->id;
-}
-
-void Funcionario::AdicionarServico(Servico servico, Data hoje){
-  
-  if(this->permissao.verificaPermissao("AdicionarServico") == false)
-    throw Erro("Permissao negada"); 
-  
-  int numServicos = 0;
-  
-  for (Servico it : listaServicos){
-    if(it.getData().getDia() == hoje.getDia() && it.getData().getMes() == hoje.getMes() && it.getData().getAno() == hoje.getAno())
-      numServicos ++;
-  }
-
-  if(numServicos < 8)
-    this->listaServicos.push_back(servico);
-
-  else
-    cout << "Limite de serviços do dia atingido" << endl;
 }

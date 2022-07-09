@@ -21,8 +21,8 @@ class Funcionario:public Usuario{
     virtual void CadastrarFuncionario (string Nome, string ID) =0;
     string getNome();
     string getID();
-    vector<Servico> listaServicos;
-    void AdicionarServico(Servico, Data);
+    Permissao getPermissao();
+    void AdicionarServico() = 0;
     void setNome(string nome);
     void setID(string id);
     

@@ -5,16 +5,9 @@
 
 class Inadimplencia:public Desligamento{
 
-
   public:
-    void desligarUnidade(Data data, UnidadeConsumidora unidade) override;
-    Inadimplencia(Data data, UnidadeConsumidora unidade);
-    Inadimplencia();
-
-  private:
-    Data data;
-    UnidadeConsumidora unidade;
-
+    void desligarUnidade(UnidadeConsumidora);
+    UnidadeConsumidora getUnidadeConsumidora();
 
 };
 

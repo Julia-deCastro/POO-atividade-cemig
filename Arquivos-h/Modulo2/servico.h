@@ -9,16 +9,22 @@
 
 class Servico{
 
+  private:
+    Data dataPlanejada;
+    Data dataExecucao;    
+
   protected:
-    Data data;
-    UnidadeConsumidora unidade; 
+    UnidadeConsumidora unidade;
 
   public:
-    void RegistraServico(Data data, UnidadeConsumidora unidade);
     Servico(Data, UnidadeConsumidora);
     Servico();
-    Data getData();
-    UnidadeConsumidora getUnidadeConsumidora();
+    virtual UnidadeConsumidora getUnidadeConsumidora() = 0;
+
+    Data getDataPlanejada();
+    Data getDataExecucao();
+    void setDataPlanejada(Data);
+    void setDataExecucao(Data);
 
 };
 #endif

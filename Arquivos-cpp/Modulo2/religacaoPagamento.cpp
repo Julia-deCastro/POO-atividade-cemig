@@ -3,8 +3,7 @@
 
 using namespace std;
 
-void ReligacaoPagamento::religarUnidade(UnidadeConsumidora unidade, Data data){
-  ReligacaoPagamento(data, unidade);
+void ReligacaoPagamento::religarUnidade(UnidadeConsumidora unidade){
   if (unidade.getInadimplente() == true)
     cout << "Cliente Inadimplente";
   else {
@@ -13,11 +12,6 @@ void ReligacaoPagamento::religarUnidade(UnidadeConsumidora unidade, Data data){
   }
 }
 
-ReligacaoPagamento::ReligacaoPagamento(Data data, UnidadeConsumidora unidade){
-   this->data = data;
-   this->unidade = unidade;
-}
-
-ReligacaoPagamento::ReligacaoPagamento(){
-  
+UnidadeConsumidora ReligacaoPagamento::getUnidadeConsumidora(){
+  return this->unidade;
 }

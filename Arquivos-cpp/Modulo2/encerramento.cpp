@@ -3,16 +3,16 @@
 
 using namespace std;
 
-void Encerramento::desligarUnidade(Data data, UnidadeConsumidora unidade){
-  Encerramento(data, unidade);
+void Encerramento::solicitadoEncerramento(UnidadeConsumidora unidade){
   unidade.setAtivo(false);
 }
 
-Encerramento::Encerramento(Data data, UnidadeConsumidora unidade){
-  this->data = data;
-  this->unidade = unidade;
+UnidadeConsumidora Encerramento::getUnidadeConsumidora(){
+  return this->unidade;
 }
 
-Encerramento::Encerramento(){
+void Encerramento::desligarUnidade (UnidadeConsumidora unidade){
+
+  unidade.setAtivo(false);
   
 }
