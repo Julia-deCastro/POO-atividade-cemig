@@ -1,6 +1,7 @@
 #include "../../Arquivos-h/Modulo1/listacliente.h"
 #include <vector>
 
+
 void Lista_Cliente::AdicionarCliente(Cliente cliente){
   this->listaCliente.push_back(cliente);
   }

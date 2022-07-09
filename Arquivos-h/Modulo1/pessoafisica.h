@@ -1,7 +1,7 @@
 #ifndef PESSOAFISICA_H
 #define PESSOAFISICA_H
 
-#include "cliente.h"
+#include "./cliente.h"
 #include<iostream>
 #include <vector>
 
@@ -13,8 +13,9 @@ class PessoaFisica: public Cliente{
     string cpf;
 
   public:
-    void cadastrarCPF(string cpf);
+    void cadastrarCPF(string nome, string cpf);
     string getCPF();
+    void CadastrarCliente(string nome);
 
 };
 

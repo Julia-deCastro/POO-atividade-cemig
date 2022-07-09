@@ -2,41 +2,53 @@
 #define CLIENTE_H
 
 #include "unidadeConsumidora.h"
+#include "../../Arquivos-h/Modulo3/Usuario.h"
+#include "../../Arquivos-h/Modulo3/Permissao.h"
 #include "fatura.h"
-#include "../Modulo2/usuario.h"
-#include "../Geral/endereco.h"
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Cliente : public Usuario {
+class Cliente:public Usuario {
        
   
   public:
 
-    Cliente(){};
-    Cliente(string nome);
-    Cliente(string nome, Endereco end);
-    virtual void AdicionarUnidade (Endereco endereco);
-    virtual float CalcularPagamento();
+    virtual void CadastrarCliente(string nome, string email, string telefone, Endereco endereco) = 0;
+    void AdicionarUnidade (Endereco endereco, string numeroInstalacao, string nivelDeTensao, int tensaoDeAtendimento);
+    float CalcularPagamento();
     UnidadeConsumidora* PesquisarUnidade(Endereco endereco);
+    void ImprimeListaFaturasPagas(); 
+    void ImprimeListaUnidades();
+    vector<UnidadeConsumidora*> listaUnidades;
+    void AdicionarFatura(Fatura *fat, Endereco Endereco);
+    void ImprimirFaturasDasUnidades(Endereco Endereco);
+    void QuitarFaturaCliente(Endereco endereco, int id);
+    Permissao getPermissao();
+   
     string getNome();
     bool getInadimplente();
     Endereco getEndereco();
-    void ImprimeListaFaturasPagas();
-    void ImprimeListaUnidades();
-    void AdicionarFatura(Fatura *fat, Endereco Endereco);
-    void ImprimirFaturasDasUnidades(Endereco Endereco);
-    void QuitarFaturaCliente(Endereco endereco, int id); 
+    string getTelefone(); 
+    string getEmail(); 
+
+    void setNome(string nome);
+    void setInadimplente(bool inadimplente);
+    void setEndereco(Endereco endereco);
+    void setTelefone(string telefone);
+    void setEmail (string email);
+
+    
 
   private:
-    vector<UnidadeConsumidora*> listaUnidades;
     string nome;
     bool inadimplente;
     vector<Fatura*> listaFaturasPagas;
-    Endereco end;
-  
+    Permissao permissao;
+    Endereco endereco;
+    string email;
+    string telefone;
     
 };
 
