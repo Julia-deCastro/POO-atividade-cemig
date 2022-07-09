@@ -44,3 +44,13 @@ string Funcionario::getID(){
     throw Erro("Permissao negada");  
   return this->id;
 }
+
+void Funcionario::adicionarLista (Data data){
+
+  this->listaServicos.push_back(data);
+
+}
+
+vector<Data> Funcionario::getLista(){
+  return this->listaServicos;
+}

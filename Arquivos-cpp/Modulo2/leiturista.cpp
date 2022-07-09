@@ -1,55 +1,40 @@
 #include "../../Arquivos-h/Modulo2/leiturista.h"
 #include "../../Arquivos-h/Modulo3/Erro.h"
+#include "../../Arquivos-h/Geral/Hoje.h"
+#include "../../Arquivos-h/Modulo3/Permissao.h"
+
 
 using namespace std;
-
-Data hoje(){
-  
-  Data hoje (0,0,0,0,0,0);
-  
-  hoje.setDia(26);
-  hoje.setMes(05);
-  hoje.setAno(2022); 
-
-  return hoje;
-}
 
 void Leiturista::CadastrarFuncionario(string Nome, string ID){
 
   this->setNome(Nome);
   this->setID(ID);
 
-  
-  this->getPermissao().adicionarPermissao("AdicionarUnidade");
-  this->getPermissao().adicionarPermissao("CalcularPagamento");
-  this->getPermissao().adicionarPermissao("PesquisarUnidade");
-  this->getPermissao().adicionarPermissao("getNome");
-  this->getPermissao().adicionarPermissao("getInadimplente");
-  this->getPermissao().adicionarPermissao("ImprimeListaFaturasPagas");
-  this->getPermissao().adicionarPermissao("ImprimeListaUnidades");
-  this->getPermissao().adicionarPermissao("AdicionarFatura");
-  this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
-  this->getPermissao().adicionarPermissao("QuitarFaturaCliente");
-  this->getPermissao().adicionarPermissao("setNome");
+  this->getPermissao().adicionarPermissao("AdicionarServico");
+  this->getPermissao().adicionarPermissao("RealizarLeitura");
+  this->getPermissao().adicionarPermissao("getUnidadeConsumidora");
   
 }
    
-void Leiturista::AdicionarServico(Leitura servico, Data data){
+void Leiturista::AdicionarServico(Data data){
 
 if(this->getPermissao().verificaPermissao("AdicionarServico") == false)
     throw Erro("Permissao negada"); 
   
+  Hoje hoje;
+
   int numServicos = 0;
-  
-  for (Leitura it : listaServicos){
-    if(it.getDataExecucao().getDia() == hoje().getDia() &&
-    it.getDataExecucao().getMes() == hoje().getMes() && it.getDataExecucao().getAno() == hoje().getAno()){
+
+  for (Data it : this->getLista()){
+    if(it.getDia() == hoje.hoje().getDia() &&
+    it.getMes() == hoje.hoje().getMes() && it.getAno() == hoje.hoje().getAno()){
       numServicos ++;
     }
   }
 
   if(numServicos < 8)
-    this->listaServicos.push_back(servico);
+    this->adicionarLista(data);
 
   else
     cout << "Limite de serviços do dia atingido" << endl;  

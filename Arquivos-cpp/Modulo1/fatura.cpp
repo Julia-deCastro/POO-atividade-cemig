@@ -4,22 +4,15 @@
 #include "../../Arquivos-h/Geral/Data.h"
 #include "../../Arquivos-h/Geral/Formato.h"
 #include "../../Arquivos-h/Geral/ExecaoCustomizada.h"
+#include "../../Arquivos-h/Geral/Hoje.h"
+
 
 using namespace std;
 
 const float jurosDia = 0.0005;
 int::Fatura::cont_id = 0;
 
-Data hoje(){
-  
-  Data hoje (0,0,0,0,0,0);
-  
-  hoje.setDia(26);
-  hoje.setMes(05);
-  hoje.setAno(2022); 
 
-  return hoje;
-}
 
 Fatura::Fatura(float valorFatura, float consumo, Data dataVencimento){
   this->valorFatura = valorFatura;
@@ -89,8 +82,9 @@ Data Fatura::getDataVencimento(){
 }
 
 void Fatura::setDataPagamento(){
+  Hoje hoje;
   Data * data= new Data (0,0,0,0,0,0);
-  *data = hoje();
+  *data = hoje.hoje();
   this->dataPagamento = *data;
 }
 
@@ -104,7 +98,8 @@ bool Fatura::getQuitado(){
 }
 
 int Fatura::getDiasAtraso() {
-  return hoje().diffData(dataVencimento);
+  Hoje hoje;
+  return hoje.hoje().diffData(dataVencimento);
 }
 
 int Fatura::getId() {

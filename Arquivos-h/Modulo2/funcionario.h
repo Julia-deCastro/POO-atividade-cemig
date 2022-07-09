@@ -15,6 +15,7 @@ class Funcionario:public Usuario{
     string nome;
     string id;
     Permissao permissao;
+    vector <Data> listaServicos;
     
   public:
 
@@ -22,10 +23,10 @@ class Funcionario:public Usuario{
     string getNome();
     string getID();
     Permissao getPermissao();
-    void AdicionarServico() = 0;
+    virtual void AdicionarServico(Data data) = 0;
     void setNome(string nome);
     void setID(string id);
-    
-
+    void adicionarLista (Data data);
+    vector<Data> getLista();
 };
 #endif
