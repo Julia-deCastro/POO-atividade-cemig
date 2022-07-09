@@ -11,8 +11,8 @@ class PessoaJuridica: public Cliente{
 
     public: 
         string getCNPJ();
-        void cadastrarCNPJ(string cnpj, string nome);
-        void CadastrarCliente(string nome);
+        void cadastrarCNPJ(string cnpj, string nome, string email, string telefone, Endereco endereco);
+        void CadastrarCliente(string nome, string email, string telefone, Endereco endereco);
 
     private:
         string cnpj;

@@ -22,10 +22,6 @@ class LocalizacaoGeografica {
     void setLongitude(int);
   
 
-
-
-
-
 bool operator == (LocalizacaoGeografica loc){
   if(this->getLatitude() == loc.getLatitude() && this->getLongitude() == loc.getLongitude())
     return true;

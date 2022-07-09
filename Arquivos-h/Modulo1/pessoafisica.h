@@ -13,9 +13,9 @@ class PessoaFisica: public Cliente{
     string cpf;
 
   public:
-    void cadastrarCPF(string nome, string cpf);
+    void cadastrarCPF(string nome, string cpf, string email, string telefone, Endereco endereco);
     string getCPF();
-    void CadastrarCliente(string nome);
+    void CadastrarCliente(string nome, string email, string telefone, Endereco endereco);
 
 };
 

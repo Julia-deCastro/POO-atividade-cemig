@@ -48,9 +48,8 @@ bool validaCpf(string cpf){
 }
 
 
-void PessoaFisica::CadastrarCliente (string nome) {
-  this->setNome(nome);
-  this->setInadimplente(false);
+void PessoaFisica::CadastrarCliente (string nome, string email, string telefone, Endereco endereco) {
+  
   this->getPermissao().adicionarPermissao("AdicionarUnidade");
   this->getPermissao().adicionarPermissao("CalcularPagamento");
   this->getPermissao().adicionarPermissao("PesquisarUnidade");
@@ -62,13 +61,26 @@ void PessoaFisica::CadastrarCliente (string nome) {
   this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
   this->getPermissao().adicionarPermissao("QuitarFaturaCliente");
   this->getPermissao().adicionarPermissao("setNome");
+  this->getPermissao().adicionarPermissao("getEndereco");
+  this->getPermissao().adicionarPermissao("getEmail");
+  this->getPermissao().adicionarPermissao("getTelefone");
+  this->getPermissao().adicionarPermissao("setEndereco");
+  this->getPermissao().adicionarPermissao("setEmail");
+  this->getPermissao().adicionarPermissao("setTelefone");
+  this->getPermissao().adicionarPermissao("getPermissao");  
+
+  this->setNome(nome);
+  this->setEmail(email);
+  this->setEndereco(endereco);
+  this->setTelefone(telefone);
+  this->setInadimplente(false);
   
 }
 
 
-void PessoaFisica::cadastrarCPF(string nome, string cpf){
+void PessoaFisica::cadastrarCPF(string nome, string cpf, string email, string telefone, Endereco endereco){
 
-  this->CadastrarCliente(nome);
+  this->CadastrarCliente(nome, email, telefone, endereco);
   
   if(cpf.size() == 11 ){
     if (validaCpf(cpf))
