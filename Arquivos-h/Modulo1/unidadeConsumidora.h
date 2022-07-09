@@ -4,35 +4,49 @@
 #include "fatura.h"
 #include "../Geral/Data.h"
 #include "../Geral/ExecaoCustomizada.h"
-#include "../Geral/endereco.h"
 #include <iostream>
 #include <vector>
+#include "../Geral/endereco.h"
+#include "../../Arquivos-h/Modulo3/Permissao.h"
 
 using namespace std;
 
-class UnidadeConsumidora
-{
+class UnidadeConsumidora {
 
-public:
-    Endereco getEndereco();
-    bool getAtivo();
-    void setAtivo(bool);
-    void imprimirListaFaturas();
-    UnidadeConsumidora(Endereco endereco);
-    UnidadeConsumidora();
-    void ImprimirUnidadeConsumidora();
-    bool getInadimplente();
-    void verificaInadimplente();
-    void AdicionarFaturaUnidade(Fatura *fat);
-    Fatura *PesquisarFatura(int id);
-    vector<Fatura *>::iterator getListaFaturasBegin();
-    vector<Fatura *>::iterator getListaFaturasEnd();
+    public:
 
-private:
-    bool inadimplente;
-    Endereco endereco;
-    bool ativo;
-    vector<Fatura *> listaFaturas;
+        void imprimirListaFaturas();
+        UnidadeConsumidora(Endereco endereco, string             numeroInstalacao, string nivelDeTensao, int           tensaoDeAtendimento);
+        UnidadeConsumidora();
+        void ImprimirUnidadeConsumidora();
+        vector<Fatura*> listaFaturas;       
+        bool getInadimplente();
+        void verificaInadimplente();
+        void AdicionarFaturaUnidade(Fatura * fat);
+        Fatura* PesquisarFatura(int id);
+
+        Endereco getEndereco();
+        bool getAtivo();
+        string getTitular();
+        string getNumeroInstalacao();
+        string getNivelDeTensao();
+        int getTensaoDeAtendimento();
+
+        void setAtivo(bool);
+        void setTitular(string);
+        void setNumeroInstalacao(string);
+        void setNivelDeTensao(string);
+        void setTensaoDeAtendimento(int);
+        
+    private:
+        bool inadimplente;
+        Endereco endereco;
+        bool ativo; 
+        string numeroInstalacao;
+        string titular;
+        string nivelDeTensao;
+        int tensaoDeAtendimento;
+        Permissao permissao;
 };
 
 #endif

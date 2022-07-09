@@ -4,6 +4,7 @@
 #include "Arquivos-h/Modulo1/fatura.h"
 #include "Arquivos-h/Modulo2/leitura.h"
 #include "Arquivos-h/Modulo2/funcionario.h"
+#include "Arquivos-h/Modulo3/Permissao.h"
 
 
 using namespace std;
@@ -24,7 +25,7 @@ Data today(){
 
 int main() {
   
-  /*
+/*
   Data dataHoje = today();
   Cliente Julia = Cliente("Julia");
 
