@@ -14,12 +14,13 @@ class LogLeitura : public Log
   string InformacaoAcessada;
 
   public:
-  void criarLog(Usuario, Data, string, string);
+  void criarLogLeitura(string, Data, string, string);
   string getEntidadeAcessada();
   string getInformacaoAcessada();
   void setEntidadeAcessada(string);
   void setInformacaoAcessada(string);
-
+  Data getData();
+  void getLog();
 };
 
 #endif

@@ -15,14 +15,14 @@ class LogEscrita : public Log
   string AtributoDepois;
 
   public:
-  void criarLog(Usuario, Data, string, string, string);
+  void criarLogEscrita(string, Data, string, string, string);
   string getEntidadeAlterada();
   string getAtributoAntes();
   string getAtributoDepois();
   void setEntidadeAlterada(string);
   void setAtributoAntes(string);
   void setAtributoDepois(string);
-
+  Data getData();
 };
 
 #endif

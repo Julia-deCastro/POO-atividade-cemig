@@ -12,15 +12,15 @@ using namespace std;
 class Log
 {
   protected:
-  Usuario usuarioOperacao;
+  string usuarioOperacao;
   Data data;
 
   public:
-  virtual void criarLog(Usuario, Data);
-  virtual Data getData() = 0;
-  virtual Usuario getUsuario();
-  virtual void setData();
-  virtual void setUsuario();
+  void criarLog(string, Data);
+  virtual Data getData()=0;
+  string getUsuario();
+  void setData(Data);
+  void setUsuario(string);
 
 };
 

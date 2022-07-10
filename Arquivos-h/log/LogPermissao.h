@@ -19,7 +19,7 @@ class LogPermissao : public Log
   string getFuncionalidadeAcessada();
   void setEntidadeAcessada(string);
   void setFuncionalidadeAcessada(string);
-
+  Data getData();
 };
 
 #endif

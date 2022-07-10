@@ -3,11 +3,12 @@
 
 
 class Usuario{
-
+  
+    
   protected:
     Usuario();
     static Usuario *instancePtr;
-
+    
   public:
     static Usuario *instance();
 
