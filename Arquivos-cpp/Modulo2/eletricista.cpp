@@ -13,7 +13,6 @@ void Eletricista::CadastrarFuncionario(string Nome, string ID){
 
   this->getPermissao().adicionarPermissao("AdicionarServico");
   
-  
 }
 
 

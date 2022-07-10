@@ -99,7 +99,10 @@ bool Fatura::getQuitado(){
 
 int Fatura::getDiasAtraso() {
   Hoje hoje;
-  return hoje.hoje().diffData(dataVencimento);
+  if(hoje.hoje().diffData(dataVencimento) > 0){
+    return hoje.hoje().diffData(dataVencimento);
+  }
+  else return 0;
 }
 
 int Fatura::getId() {

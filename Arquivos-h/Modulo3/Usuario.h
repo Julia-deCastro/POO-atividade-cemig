@@ -4,7 +4,7 @@
 
 class Usuario{
 
-  private:
+  protected:
     Usuario();
     static Usuario *instancePtr;
 

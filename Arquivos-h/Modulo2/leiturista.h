@@ -14,9 +14,10 @@ using namespace std;
 class Leiturista:public Funcionario{
 
   public:
-    void CadastrarFuncionario (string Nome, string ID);
+    Leiturista(string Nome, string ID);
     void AdicionarServico(Data);
-    Permissao getPermissao();
-
+    void FuncionarioRealizarLeitura(float leitura, Data dataExecutada, Data dataPlanejada, UnidadeConsumidora * unidade);
+    void criarFatura(Leitura leitura, UnidadeConsumidora * unidade);
 };
+
 #endif

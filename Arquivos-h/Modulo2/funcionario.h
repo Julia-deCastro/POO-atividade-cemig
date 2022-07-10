@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Funcionario:public Usuario{
+class Funcionario{
 
   private:
     string nome;
@@ -18,8 +18,6 @@ class Funcionario:public Usuario{
     vector <Data> listaServicos;
     
   public:
-
-    virtual void CadastrarFuncionario (string Nome, string ID) =0;
     string getNome();
     string getID();
     Permissao getPermissao();
@@ -28,5 +26,6 @@ class Funcionario:public Usuario{
     void setID(string id);
     void adicionarLista (Data data);
     vector<Data> getLista();
+
 };
 #endif

@@ -12,8 +12,10 @@ UnidadeConsumidora::UnidadeConsumidora(Endereco endereco, string numeroInstalaca
   if((nivelDeTensao == "BT" && tensaoDeAtendimento > 1000) ||
      (nivelDeTensao == "MT" && (tensaoDeAtendimento < 1000 ||     tensaoDeAtendimento > 36000)) ||
      (nivelDeTensao == "AT" && tensaoDeAtendimento < 36000))
-    throw Erro("Nivel de tensão incompatível com tensão de atendimento!");
+    throw Erro("Nivel de tensão incompatível com tensão de atendimento!/n");
   
+  this->leituraTotal = 0;
+
   this->endereco = endereco;
   this->numeroInstalacao = numeroInstalacao;
   this->nivelDeTensao = nivelDeTensao;
@@ -160,6 +162,10 @@ int UnidadeConsumidora::getTensaoDeAtendimento() {
   return this->tensaoDeAtendimento;
 }
 
+float UnidadeConsumidora::getLeituraTotal(){
+  return this->leituraTotal;
+}
+
 void UnidadeConsumidora::setTitular(string titular) {
     if(this->permissao.verificaPermissao("setTitular") == false)
     throw Erro("Permissao negada");
@@ -182,4 +188,8 @@ void UnidadeConsumidora::setTensaoDeAtendimento(int tensao) {
     if(this->permissao.verificaPermissao("setTensaoDeAtendimento") == false)
     throw Erro("Permissao negada");
   this->tensaoDeAtendimento = tensao;
+}
+
+void UnidadeConsumidora::setLeituraTotal(float leituraTotal) {
+  this->leituraTotal = leituraTotal;
 }

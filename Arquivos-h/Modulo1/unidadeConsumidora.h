@@ -31,12 +31,15 @@ class UnidadeConsumidora {
         string getNumeroInstalacao();
         string getNivelDeTensao();
         int getTensaoDeAtendimento();
+        float getLeituraTotal();
 
         void setAtivo(bool);
         void setTitular(string);
         void setNumeroInstalacao(string);
         void setNivelDeTensao(string);
         void setTensaoDeAtendimento(int);
+        void setLeituraTotal(float);
+        
         
     private:
         bool inadimplente;
@@ -47,6 +50,7 @@ class UnidadeConsumidora {
         string nivelDeTensao;
         int tensaoDeAtendimento;
         Permissao permissao;
+        float leituraTotal;
 };
 
 #endif

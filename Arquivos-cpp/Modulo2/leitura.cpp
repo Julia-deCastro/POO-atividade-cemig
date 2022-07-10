@@ -3,8 +3,10 @@
 
 using namespace std;
 
-void Leitura::RealizarLeitura(float leitura){
+void Leitura::RealizarLeitura(float leitura, Data dataLeitura, Data dataPlanejada){
   this->LeituraConsumo = leitura;
+  this->setDataPlanejada(dataPlanejada);
+  this->setDataExecucao(dataLeitura);
 }
 
 float Leitura::ConsultarLeitura(){

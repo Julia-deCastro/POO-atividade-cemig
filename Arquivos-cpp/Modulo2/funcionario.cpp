@@ -4,16 +4,6 @@
 
 using namespace std;
 
-void Funcionario::CadastrarFuncionario(string nome, string id){
-  this->nome = nome;
-  this->id = id;
-  this->permissao.adicionarPermissao("setNome");
-  this->permissao.adicionarPermissao("setID");
-  this->permissao.adicionarPermissao("getNome");
-  this->permissao.adicionarPermissao("AdicionarServico");
-  this->permissao.adicionarPermissao("getPermissao");
-}
-
 void Funcionario::setNome(string nome){
   if(this->permissao.verificaPermissao("setNome") == false)
     throw Erro("Permissao negada");

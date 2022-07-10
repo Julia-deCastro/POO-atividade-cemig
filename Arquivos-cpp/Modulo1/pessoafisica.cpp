@@ -112,5 +112,4 @@ string PessoaFisica::getCPF(){
     
 void PessoaFisica::AdicionarPermissaoCPF(string metodo){
   this->getPermissao()->adicionarPermissao(metodo);
-  cout<<"Entrou"<<endl;
 }

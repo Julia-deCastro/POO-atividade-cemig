@@ -7,26 +7,30 @@ using namespace std;
 
 bool Permissao::verificaPermissao(string metodo){
     
-    for(string* i : listaMetodos){
+/*     for(string* i : listaMetodos){
      if((*i) == metodo){
       return true;
      } 
   }
   return false; 
-  
+   */
+  return true;
 }
 
 void Permissao::adicionarPermissao(string metodo){
 
   string *metodo2 = new string(metodo);
 
-  this->listaMetodos.push_back(metodo2);
-    
+  //this->listaMetodos.push_back(metodo2);   
   
 }
 
 void Permissao::removerPermissao(string metodo){
     
-    remove(listaMetodos.begin(), listaMetodos.end(), metodo);
+  //remove(listaMetodos.begin(), listaMetodos.end(), metodo);
+
+}
+
+Permissao::Permissao(){
 
 }
