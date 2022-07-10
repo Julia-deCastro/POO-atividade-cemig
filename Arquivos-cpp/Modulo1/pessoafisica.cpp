@@ -50,7 +50,7 @@ bool validaCpf(string cpf){
 
 
 float PessoaFisica::CalcularPagamento(){ 
-  if(this->getPermissao().verificaPermissao("CalcularPagamento") == false)
+  if(this->getPermissao()->verificaPermissao("CalcularPagamento") == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator i;
@@ -69,24 +69,24 @@ float PessoaFisica::CalcularPagamento(){
 
  PessoaFisica::PessoaFisica(string nome, string cpf, string email, string telefone, Endereco endereco){
   
-  this->getPermissao().adicionarPermissao("AdicionarUnidade");
-  this->getPermissao().adicionarPermissao("CalcularPagamento");
-  this->getPermissao().adicionarPermissao("PesquisarUnidade");
-  this->getPermissao().adicionarPermissao("ImprimeListaFaturasPagas");
-  this->getPermissao().adicionarPermissao("ImprimeListaUnidades");
-  this->getPermissao().adicionarPermissao("getNome");
-  this->getPermissao().adicionarPermissao("getInadimplente");
-  this->getPermissao().adicionarPermissao("AdicionarFatura");
-  this->getPermissao().adicionarPermissao("QuitarFaturaCliente");
-  this->getPermissao().adicionarPermissao("setNome");
-  this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
-  this->getPermissao().adicionarPermissao("getEndereco");
-  this->getPermissao().adicionarPermissao("getEmail");
-  this->getPermissao().adicionarPermissao("getTelefone");
-  this->getPermissao().adicionarPermissao("setEndereco");
-  this->getPermissao().adicionarPermissao("setEmail");
-  this->getPermissao().adicionarPermissao("setTelefone");
-  this->getPermissao().adicionarPermissao("getPermissao");
+  this->AdicionarPermissaoCPF("AdicionarUnidade");
+  this->AdicionarPermissaoCPF("CalcularPagamento");
+  this->AdicionarPermissaoCPF("PesquisarUnidade");
+  this->AdicionarPermissaoCPF("ImprimeListaFaturasPagas");
+  this->AdicionarPermissaoCPF("ImprimeListaUnidades");
+  this->AdicionarPermissaoCPF("getNome");
+  this->AdicionarPermissaoCPF("getInadimplente");
+  this->AdicionarPermissaoCPF("AdicionarFatura");
+  this->AdicionarPermissaoCPF("QuitarFaturaCliente");
+  this->AdicionarPermissaoCPF("setNome");
+  this->AdicionarPermissaoCPF("ImprimirFaturasDasUnidades");
+  this->AdicionarPermissaoCPF("getEndereco");
+  this->AdicionarPermissaoCPF("getEmail");
+  this->AdicionarPermissaoCPF("getTelefone");
+  this->AdicionarPermissaoCPF("setEndereco");
+  this->AdicionarPermissaoCPF("setEmail");
+  this->AdicionarPermissaoCPF("setTelefone");
+  this->AdicionarPermissaoCPF("getPermissao");
   this->setNome(nome);
   this->setEmail(email);
   this->setTelefone(telefone);
@@ -110,3 +110,7 @@ string PessoaFisica::getCPF(){
   return this->cpf;
 }
     
+void PessoaFisica::AdicionarPermissaoCPF(string metodo){
+  this->getPermissao()->adicionarPermissao(metodo);
+  cout<<"Entrou"<<endl;
+}

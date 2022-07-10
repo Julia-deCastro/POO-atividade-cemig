@@ -25,7 +25,8 @@ class Cliente{
     void AdicionarFatura(Fatura *fat, Endereco Endereco);
     void ImprimirFaturasDasUnidades(Endereco Endereco);
     void QuitarFaturaCliente(Endereco endereco, int id);
-    Permissao getPermissao();
+    Permissao* getPermissao();
+
    
     string getNome();
     bool getInadimplente();
@@ -38,6 +39,8 @@ class Cliente{
     void setEndereco(Endereco endereco);
     void setTelefone(string telefone);
     void setEmail (string email);
+   
+
 
     
 
@@ -45,7 +48,7 @@ class Cliente{
     string nome;
     bool inadimplente;
     vector<Fatura*> listaFaturasPagas;
-    Permissao permissao;
+    Permissao* permissao;
     Endereco endereco;
     string email;
     string telefone;

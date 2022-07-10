@@ -8,9 +8,11 @@ using namespace std;
 class Permissao{
 
   public:
-    bool verificaPermissao(string* metodo);
-    void adicionarPermissao(string* metodo);
-    void removerPermissao(string* metodo);
+    Permissao();
+    bool verificaPermissao(string metodo);
+    void adicionarPermissao(string metodo);
+    void removerPermissao(string metodo);
+
 
 
   private:

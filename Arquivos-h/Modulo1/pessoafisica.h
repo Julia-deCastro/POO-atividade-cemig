@@ -17,6 +17,7 @@ class PessoaFisica: public Cliente{
     PessoaFisica();
     string getCPF();
     virtual float CalcularPagamento();
+    void AdicionarPermissaoCPF(string metodo);
   
 
 };

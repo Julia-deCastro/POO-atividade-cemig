@@ -6,16 +6,16 @@
 
 using namespace std;
 
-string* metodo(string metodo){
+/* string* (string metodo){
   string* metodo2 = new string(metodo);
   return metodo2;
-}
+} */
 
 Cliente::Cliente(){
 }
 
 void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, string nivelDeTensao, int tensaoDeAtendimento){
-  if(this->permissao.verificaPermissao(metodo("AdicionarUnidade")) == false)
+  if(this->permissao->verificaPermissao(("AdicionarUnidade")) == false)
     throw Erro("Permissao negada");
 
   
@@ -26,7 +26,7 @@ void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, stri
 }
   
 float Cliente::CalcularPagamento(){ 
-  if(this->permissao.verificaPermissao(metodo("CalcularPagamento")) == false)
+  if(this->permissao->verificaPermissao(("CalcularPagamento")) == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator i;
@@ -45,7 +45,7 @@ float Cliente::CalcularPagamento(){
 
 
 UnidadeConsumidora* Cliente::PesquisarUnidade(Endereco endereco){
-  if(this->permissao.verificaPermissao(metodo("PesquisarUnidade")) == false)
+  if(this->permissao->verificaPermissao(("PesquisarUnidade")) == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator it;
@@ -60,7 +60,7 @@ UnidadeConsumidora* Cliente::PesquisarUnidade(Endereco endereco){
 
 
 void Cliente::ImprimeListaFaturasPagas(){
-  if(this->permissao.verificaPermissao("ImprimeListaFaturasPagas") == false)
+  if(this->permissao->verificaPermissao("ImprimeListaFaturasPagas") == false)
     throw Erro("Permissao negada");
   for (Fatura* it : listaFaturasPagas){
     it->imprimirFatura();
@@ -68,7 +68,7 @@ void Cliente::ImprimeListaFaturasPagas(){
 }
 
 void Cliente::ImprimeListaUnidades(){
-    if(this->permissao.verificaPermissao("ImprimeListaUnidades") == false)
+    if(this->permissao->verificaPermissao("ImprimeListaUnidades") == false)
       throw Erro("Permissao negada");
   vector<UnidadeConsumidora*>::iterator it;
   int i=1;
@@ -83,20 +83,20 @@ void Cliente::ImprimeListaUnidades(){
 }
 
 string Cliente::getNome(){
-  if(this->permissao.verificaPermissao("getNome") == false)
+  if(this->permissao->verificaPermissao("getNome") == false)
     throw Erro("Permissao negada");
   return this->nome;
 }
 
 bool Cliente::getInadimplente(){
-  if(this->permissao.verificaPermissao("getInadimplente") == false)
+  if(this->permissao->verificaPermissao("getInadimplente") == false)
     throw Erro("Permissao negada");
   return this->inadimplente;
 
 }
 
 void Cliente::AdicionarFatura(Fatura *fat, Endereco endereco){
-  if(this->permissao.verificaPermissao("AdicionarFatura") == false)
+  if(this->permissao->verificaPermissao("AdicionarFatura") == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator it;
@@ -110,7 +110,7 @@ void Cliente::AdicionarFatura(Fatura *fat, Endereco endereco){
 
 
 void Cliente::ImprimirFaturasDasUnidades(Endereco end){
-  if(this->permissao.verificaPermissao("ImprimirFaturasDasUnidades") == false)
+  if(this->permissao->verificaPermissao("ImprimirFaturasDasUnidades") == false)
     throw Erro("Permissao negada");
   
   PesquisarUnidade(end)->imprimirListaFaturas();
@@ -119,7 +119,7 @@ void Cliente::ImprimirFaturasDasUnidades(Endereco end){
 
 void Cliente::QuitarFaturaCliente(Endereco endereco, int id){
   
-  if(this->permissao.verificaPermissao("QuitarFaturaCliente") == false)
+  if(this->permissao->verificaPermissao("QuitarFaturaCliente") == false)
     throw Erro("Permissao negada");
   
   this->PesquisarUnidade(endereco)->PesquisarFatura(id)->quitarFatura();
@@ -128,39 +128,40 @@ void Cliente::QuitarFaturaCliente(Endereco endereco, int id){
 
 void Cliente::setNome(string nome){
   
-  if(this->permissao.verificaPermissao("setNome") == false)
+  if(this->permissao->verificaPermissao("setNome") == false)
     throw Erro("Permissao negada");
   
   this->nome = nome;
 }
 
 void Cliente::setInadimplente(bool inadimplente){
-  if(this->permissao.verificaPermissao("setInadimplente") == false)
+  if(this->permissao->verificaPermissao("setInadimplente") == false)
     throw Erro("Permissao negada");
   this->inadimplente = inadimplente;  
 }
 
-Permissao Cliente::getPermissao(){
+Permissao* Cliente::getPermissao(){
   return this->permissao;
+  cout << "Get" << endl;
 }
 
 Endereco Cliente::getEndereco(){
 
-  if(this->permissao.verificaPermissao("getEndereco") == false)
+  if(this->permissao->verificaPermissao("getEndereco") == false)
     throw Erro("Permissao negada");
   return this->endereco;
   
 }
 string Cliente::getEmail(){
   
-  if(this->permissao.verificaPermissao("getEmail") == false)
+  if(this->permissao->verificaPermissao("getEmail") == false)
     throw Erro("Permissao negada");
   
   return this->email;
 }
 string Cliente::getTelefone(){
   
-  if(this->permissao.verificaPermissao("getTelefone") == false)
+  if(this->permissao->verificaPermissao("getTelefone") == false)
     throw Erro("Permissao negada");
   
   return this->telefone;
@@ -168,7 +169,7 @@ string Cliente::getTelefone(){
 
 void Cliente::setEndereco(Endereco endereco){
 
-  if(this->permissao.verificaPermissao("setNome") == false)
+  if(this->permissao->verificaPermissao("setNome") == false)
     throw Erro("Permissao negada");
   
   this->endereco = endereco;
@@ -177,7 +178,7 @@ void Cliente::setEndereco(Endereco endereco){
 
 void Cliente::setEmail(string email){
 
-  if(this->permissao.verificaPermissao("setEmail") == false)
+  if(this->permissao->verificaPermissao("setEmail") == false)
     throw Erro("Permissao negada");
   
   this->email = email;
@@ -186,9 +187,11 @@ void Cliente::setEmail(string email){
 
 void Cliente::setTelefone(string telefone){
 
-  if(this->permissao.verificaPermissao("setTelefone") == false)
+  if(this->permissao->verificaPermissao("setTelefone") == false)
     throw Erro("Permissao negada");
   
   this->telefone = telefone;
 
 }
+
+

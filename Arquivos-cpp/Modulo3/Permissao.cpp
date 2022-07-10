@@ -5,11 +5,10 @@
 
 using namespace std;
 
-bool Permissao::verificaPermissao(string* metodo){
-    vector<string*>::iterator i;
+bool Permissao::verificaPermissao(string metodo){
     
-    for(i = listaMetodos.begin(); i!= listaMetodos.end(); i++){
-     if(*i == metodo){
+    for(string* i : listaMetodos){
+     if((*i) == metodo){
       return true;
      } 
   }
@@ -17,14 +16,16 @@ bool Permissao::verificaPermissao(string* metodo){
   
 }
 
-void Permissao::adicionarPermissao(string* metodo){
+void Permissao::adicionarPermissao(string metodo){
 
-  this->listaMetodos.push_back(metodo);
+  string *metodo2 = new string(metodo);
+
+  this->listaMetodos.push_back(metodo2);
     
   
 }
 
-void Permissao::removerPermissao(string* metodo){
+void Permissao::removerPermissao(string metodo){
     
     remove(listaMetodos.begin(), listaMetodos.end(), metodo);
 

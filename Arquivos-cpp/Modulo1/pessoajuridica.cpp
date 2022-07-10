@@ -49,7 +49,7 @@ bool validaCNPJ(string cnpj){
 }
 
 float PessoaJuridica::CalcularPagamento(){ 
-  if(this->getPermissao().verificaPermissao("CalcularPagamento") == false)
+  if(this->getPermissao()->verificaPermissao("CalcularPagamento") == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator i;
@@ -68,24 +68,24 @@ float PessoaJuridica::CalcularPagamento(){
 
 PessoaJuridica::PessoaJuridica (string nome, string cnpj, string email, string telefone, Endereco endereco){
 
-  this->getPermissao().adicionarPermissao("AdicionarUnidade");
-  this->getPermissao().adicionarPermissao("CalcularPagamento");
-  this->getPermissao().adicionarPermissao("PesquisarUnidade");
-  this->getPermissao().adicionarPermissao("ImprimeListaFaturasPagas");
-  this->getPermissao().adicionarPermissao("ImprimeListaUnidades");
-  this->getPermissao().adicionarPermissao("getNome");
-  this->getPermissao().adicionarPermissao("getInadimplente");
-  this->getPermissao().adicionarPermissao("AdicionarFatura");
-  this->getPermissao().adicionarPermissao("QuitarFaturaCliente");
-  this->getPermissao().adicionarPermissao("setNome");
-  this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
-  this->getPermissao().adicionarPermissao("getEndereco");
-  this->getPermissao().adicionarPermissao("getEmail");
-  this->getPermissao().adicionarPermissao("getTelefone");
-  this->getPermissao().adicionarPermissao("setEndereco");
-  this->getPermissao().adicionarPermissao("setEmail");
-  this->getPermissao().adicionarPermissao("setTelefone");
-  this->getPermissao().adicionarPermissao("getPermissao");
+  this->getPermissao()->adicionarPermissao("AdicionarUnidade");
+  this->getPermissao()->adicionarPermissao("CalcularPagamento");
+  this->getPermissao()->adicionarPermissao("PesquisarUnidade");
+  this->getPermissao()->adicionarPermissao("ImprimeListaFaturasPagas");
+  this->getPermissao()->adicionarPermissao("ImprimeListaUnidades");
+  this->getPermissao()->adicionarPermissao("getNome");
+  this->getPermissao()->adicionarPermissao("getInadimplente");
+  this->getPermissao()->adicionarPermissao("AdicionarFatura");
+  this->getPermissao()->adicionarPermissao("QuitarFaturaCliente");
+  this->getPermissao()->adicionarPermissao("setNome");
+  this->getPermissao()->adicionarPermissao("ImprimirFaturasDasUnidades");
+  this->getPermissao()->adicionarPermissao("getEndereco");
+  this->getPermissao()->adicionarPermissao("getEmail");
+  this->getPermissao()->adicionarPermissao("getTelefone");
+  this->getPermissao()->adicionarPermissao("setEndereco");
+  this->getPermissao()->adicionarPermissao("setEmail");
+  this->getPermissao()->adicionarPermissao("setTelefone");
+  this->getPermissao()->adicionarPermissao("getPermissao");
   this->setNome(nome);
   this->setEmail(email);
   this->setTelefone(telefone);
