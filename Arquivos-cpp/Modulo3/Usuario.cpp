@@ -11,3 +11,6 @@ using namespace std;
       instancePtr = new Usuario;
     return instancePtr;
   }
+  Usuario::Usuario(){
+
+  }

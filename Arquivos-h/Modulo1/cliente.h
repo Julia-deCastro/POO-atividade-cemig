@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Cliente{
+class Cliente:public Usuario{
        
   
   public:

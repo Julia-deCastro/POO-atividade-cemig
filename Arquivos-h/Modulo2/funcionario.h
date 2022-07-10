@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Funcionario{
+class Funcionario: public Usuario{
 
   private:
     string nome;
