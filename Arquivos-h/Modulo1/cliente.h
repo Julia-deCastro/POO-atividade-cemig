@@ -10,14 +10,14 @@
 
 using namespace std;
 
-class Cliente:public Usuario {
+class Cliente{
        
   
   public:
 
-    virtual void CadastrarCliente(string nome, string email, string telefone, Endereco endereco) = 0;
+    Cliente();
     void AdicionarUnidade (Endereco endereco, string numeroInstalacao, string nivelDeTensao, int tensaoDeAtendimento);
-    float CalcularPagamento();
+    virtual float CalcularPagamento() = 0;
     UnidadeConsumidora* PesquisarUnidade(Endereco endereco);
     void ImprimeListaFaturasPagas(); 
     void ImprimeListaUnidades();

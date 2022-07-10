@@ -11,8 +11,9 @@ class PessoaJuridica: public Cliente{
 
     public: 
         string getCNPJ();
-        void cadastrarCNPJ(string cnpj, string nome, string email, string telefone, Endereco endereco);
-        void CadastrarCliente(string nome, string email, string telefone, Endereco endereco);
+        PessoaJuridica();
+        PessoaJuridica(string cnpj, string nome, string email, string telefone, Endereco endereco);
+        virtual float CalcularPagamento();
 
     private:
         string cnpj;

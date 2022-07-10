@@ -8,13 +8,13 @@ using namespace std;
 class Permissao{
 
   public:
-    bool verificaPermissao(string metodo);
-    void adicionarPermissao(string metodo);
-    void removerPermissao(string metodo);
+    bool verificaPermissao(string* metodo);
+    void adicionarPermissao(string* metodo);
+    void removerPermissao(string* metodo);
 
 
   private:
-    vector<string> listaMetodos; 
+    vector<string*> listaMetodos; 
 
 
 };

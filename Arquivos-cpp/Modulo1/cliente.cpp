@@ -6,34 +6,16 @@
 
 using namespace std;
 
+string* metodo(string metodo){
+  string* metodo2 = new string(metodo);
+  return metodo2;
+}
 
-
-void Cliente::CadastrarCliente(string nome, string email, string telefone, Endereco endereco){
-  this->nome = nome;
-  this->email = email;
-  this->telefone = telefone;
-  this->endereco = endereco;
-  this->permissao.adicionarPermissao("CalcularPagamento");
-  this->permissao.adicionarPermissao("PesquisarUnidade");
-  this->permissao.adicionarPermissao("ImprimeListaFaturasPagas");
-  this->permissao.adicionarPermissao("ImprimeListaUnidades");
-  this->permissao.adicionarPermissao("getNome");
-  this->permissao.adicionarPermissao("getInadimplente");
-  this->permissao.adicionarPermissao("AdicionarFatura");
-  this->permissao.adicionarPermissao("QuitarFaturaCliente");
-  this->permissao.adicionarPermissao("setNome");
-  this->permissao.adicionarPermissao("ImprimirFaturasDasUnidades");
-  this->permissao.adicionarPermissao("getEndereco");
-  this->permissao.adicionarPermissao("getEmail");
-  this->permissao.adicionarPermissao("getTelefone");
-  this->permissao.adicionarPermissao("setEndereco");
-  this->permissao.adicionarPermissao("setEmail");
-  this->permissao.adicionarPermissao("setTelefone");
-  this->permissao.adicionarPermissao("getPermissao");
+Cliente::Cliente(){
 }
 
 void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, string nivelDeTensao, int tensaoDeAtendimento){
-  if(this->permissao.verificaPermissao("AdicionarUnidade") == false)
+  if(this->permissao.verificaPermissao(metodo("AdicionarUnidade")) == false)
     throw Erro("Permissao negada");
 
   
@@ -44,7 +26,7 @@ void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, stri
 }
   
 float Cliente::CalcularPagamento(){ 
-  if(this->permissao.verificaPermissao("CalcularPagamento") == false)
+  if(this->permissao.verificaPermissao(metodo("CalcularPagamento")) == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator i;
@@ -63,7 +45,7 @@ float Cliente::CalcularPagamento(){
 
 
 UnidadeConsumidora* Cliente::PesquisarUnidade(Endereco endereco){
-  if(this->permissao.verificaPermissao("PesquisarUnidade") == false)
+  if(this->permissao.verificaPermissao(metodo("PesquisarUnidade")) == false)
     throw Erro("Permissao negada");
   
   vector<UnidadeConsumidora*>::iterator it;

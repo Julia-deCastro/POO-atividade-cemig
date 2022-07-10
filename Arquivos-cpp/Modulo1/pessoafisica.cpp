@@ -48,39 +48,49 @@ bool validaCpf(string cpf){
 }
 
 
-void PessoaFisica::CadastrarCliente (string nome, string email, string telefone, Endereco endereco) {
+
+float PessoaFisica::CalcularPagamento(){ 
+  if(this->getPermissao().verificaPermissao("CalcularPagamento") == false)
+    throw Erro("Permissao negada");
+  
+  vector<UnidadeConsumidora*>::iterator i;
+  vector<Fatura*>::iterator j;
+  
+  float valor = 0;
+  for (i=listaUnidades.begin(); i!=listaUnidades.end(); i++) {
+    for(j=(*i)->listaFaturas.begin(); j!=(*i)->listaFaturas.end(); j++){
+      if((*j)->getQuitado() == false){
+        valor += (*j)->getValorFatura() + (*j)->calcularJuros();
+      }
+    }    
+  }
+  return valor;
+}
+
+ PessoaFisica::PessoaFisica(string nome, string cpf, string email, string telefone, Endereco endereco){
   
   this->getPermissao().adicionarPermissao("AdicionarUnidade");
   this->getPermissao().adicionarPermissao("CalcularPagamento");
   this->getPermissao().adicionarPermissao("PesquisarUnidade");
-  this->getPermissao().adicionarPermissao("getNome");
-  this->getPermissao().adicionarPermissao("getInadimplente");
   this->getPermissao().adicionarPermissao("ImprimeListaFaturasPagas");
   this->getPermissao().adicionarPermissao("ImprimeListaUnidades");
+  this->getPermissao().adicionarPermissao("getNome");
+  this->getPermissao().adicionarPermissao("getInadimplente");
   this->getPermissao().adicionarPermissao("AdicionarFatura");
-  this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
   this->getPermissao().adicionarPermissao("QuitarFaturaCliente");
   this->getPermissao().adicionarPermissao("setNome");
+  this->getPermissao().adicionarPermissao("ImprimirFaturasDasUnidades");
   this->getPermissao().adicionarPermissao("getEndereco");
   this->getPermissao().adicionarPermissao("getEmail");
   this->getPermissao().adicionarPermissao("getTelefone");
   this->getPermissao().adicionarPermissao("setEndereco");
   this->getPermissao().adicionarPermissao("setEmail");
   this->getPermissao().adicionarPermissao("setTelefone");
-  this->getPermissao().adicionarPermissao("getPermissao");  
-
+  this->getPermissao().adicionarPermissao("getPermissao");
   this->setNome(nome);
   this->setEmail(email);
-  this->setEndereco(endereco);
   this->setTelefone(telefone);
-  this->setInadimplente(false);
-  
-}
-
-
-void PessoaFisica::cadastrarCPF(string nome, string cpf, string email, string telefone, Endereco endereco){
-
-  this->CadastrarCliente(nome, email, telefone, endereco);
+  this->setEndereco(endereco);
   
   if(cpf.size() == 11 ){
     if (validaCpf(cpf))
