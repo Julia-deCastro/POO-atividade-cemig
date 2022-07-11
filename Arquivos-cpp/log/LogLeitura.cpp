@@ -1,8 +1,8 @@
 #include "../../Arquivos-h/log/LogLeitura.h"
 
-void LogLeitura::criarLogLeitura(string usuario, Data data, string EntidadeAcessada, string InformacaoAcessada) {
-  this->setUsuario(usuario);
-  this->setData(data);
+LogLeitura::LogLeitura(string usuario, Data data, string EntidadeAcessada, string InformacaoAcessada) {
+  this->usuarioOperacao = usuario;
+  this->data = data;
   this->EntidadeAcessada = EntidadeAcessada;
   this->InformacaoAcessada = InformacaoAcessada;
 }

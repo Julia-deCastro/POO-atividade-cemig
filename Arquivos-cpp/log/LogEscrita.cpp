@@ -1,9 +1,9 @@
 #include "../../Arquivos-h/log/LogEscrita.h"
 
-void LogEscrita::criarLogEscrita(string usuario, Data data, string EntidadeAlterada, 
+LogEscrita::LogEscrita(string usuario, Data data, string EntidadeAlterada, 
 string AtributoAntes, string AtributoDepois) {
-  this->setUsuario(usuario);
-  this->setData(data);
+  this->usuarioOperacao = usuario;
+  this->data = data;
   this->EntidadeAlterada = EntidadeAlterada;
   this->AtributoAntes = AtributoAntes;
   this->AtributoDepois = AtributoDepois;

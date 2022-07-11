@@ -23,7 +23,7 @@ int main() {
   Hoje dataHoje;
   Data hoje = dataHoje.hoje();
   Data junho3(2022,6,3,0,0,0);
-  
+
   LocalizacaoGeografica loc1 = LocalizacaoGeografica(20, 50);
   Endereco endereco1 = Endereco("Rua 34", 20, "1200", "Time Square", "10001", "NYC", "NY", loc1);
   PessoaFisica Julia = PessoaFisica("Julia", "12873297646", "julia@gmail.com", "3482-8065", endereco1);
@@ -34,6 +34,8 @@ int main() {
   LocalizacaoGeografica loc2 = LocalizacaoGeografica(30, 50);
   Endereco end2 = Endereco("Rua 60", 180, "1200", "Silveira", "10001", "BH", "MG", loc2);
   PessoaJuridica itau = PessoaJuridica("Itau","60701190000104", "itau@gmail.com", "33333333", end2);
+
+  //Identicar problemas de cpf e CNPJ inválidos:
 
   //PessoaFisica Gabriel = PessoaFisica("Julia", "11950160695", "julia@gmail.com", "3482-8065", endereco1);
   //PessoaJuridica Oswaldo = PessoaJuridica("00000000000", "00000000000012", "julia@gmail.com", "3482-8065", endereco1);
@@ -49,6 +51,8 @@ int main() {
   Julia.AdicionarUnidade(endUnidade3, "3", "AT", 40000);
 
   //Julia.AdicionarUnidade(endUnidade3, "2", "BT", 6000);
+
+  Julia.listaLog.imprimirLogs();
 
   cout << "---------- Lista Unidades de Julia ----------" << endl;
   

@@ -1,5 +1,5 @@
 #ifndef LOG_LEITURA_H
-#define LOG_lEITURA_H
+#define LOG_LEITURA_H
 
 #include <string>
 #include <iostream>
@@ -7,20 +7,21 @@
 
 using namespace std;
 
-class LogLeitura : public Log
-{
+class LogLeitura : public Log{
   private:
   string EntidadeAcessada;
   string InformacaoAcessada;
 
   public:
-  void criarLogLeitura(string, Data, string, string);
+  LogLeitura(){};
+  LogLeitura(string, Data, string, string);
   string getEntidadeAcessada();
   string getInformacaoAcessada();
   void setEntidadeAcessada(string);
   void setInformacaoAcessada(string);
   Data getData();
   void getLog();
+
 };
 
 #endif

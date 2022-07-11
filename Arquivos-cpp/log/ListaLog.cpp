@@ -25,22 +25,22 @@ void ListaLog::imprimirLogs(){
 
     for(LogLeitura* i : listaLogLeitura){
 
-        cout << "Log leitura" << endl << "Data:";
+        cout << endl<< "Log leitura:" << endl << "Data:";
         i->getData().printData(); 
-        cout << "Usuario" << i->getUsuario() << endl
-        << "Entidade Acessada" << i->getEntidadeAcessada() << endl
-        << "Informacao Acessada" << i->getInformacaoAcessada() << endl;
+        cout << "Usuario: " << i->getUsuario() << endl
+        << "Entidade Acessada: " << i->getEntidadeAcessada() << endl
+        << "Informacao Acessada: " << i->getInformacaoAcessada() << endl;
 
     }
 
     for(LogEscrita* i : listaLogEscrita){
            
-        cout << "Log leitura" << endl << "Data:";
+        cout << endl<< "Log escrita:" << endl << "Data:";
         i->getData().printData(); 
-        cout << "Usuario" << i->getUsuario() << endl
-        << "Entidade Acessada" << i->getEntidadeAlterada() << endl
-        << "Atributo anterior" << i->getAtributoAntes() << endl
-        << "Atributo atualizado" << i->getAtributoDepois() << endl;
+        cout << "Usuario: " << i->getUsuario() << endl
+        << "Entidade Acessada: " << i->getEntidadeAlterada() << endl
+        << "Atributo anterior: " << i->getAtributoAntes() << endl
+        << "Atributo atualizado: " << i->getAtributoDepois() << endl;
     }
 }
 

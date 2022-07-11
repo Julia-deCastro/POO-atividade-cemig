@@ -14,7 +14,8 @@ class LogPermissao : public Log
   string FuncionalidadeAcessada;
 
   public:
-  void criarLog(Usuario, Data, string, string);
+  LogPermissao(){};
+  LogPermissao(string usuario, Data data, string EntidadeAcessada, string FuncionalidadeAcessada);
   string getEntidadeAcessada();
   string getFuncionalidadeAcessada();
   void setEntidadeAcessada(string);
@@ -23,3 +24,4 @@ class LogPermissao : public Log
 };
 
 #endif
+  

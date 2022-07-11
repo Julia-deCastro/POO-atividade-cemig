@@ -11,11 +11,9 @@ using namespace std;
 
 class Log
 {
-  protected:
+  public:
   string usuarioOperacao;
   Data data;
-
-  public:
   void criarLog(string, Data);
   virtual Data getData()=0;
   string getUsuario();

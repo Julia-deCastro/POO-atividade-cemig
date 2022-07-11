@@ -92,6 +92,8 @@ float PessoaFisica::CalcularPagamento(){
   this->setTelefone(telefone);
   this->setEndereco(endereco);
   
+
+  
   if(cpf.size() == 11 ){
     if (validaCpf(cpf))
       this->cpf = cpf;
@@ -102,6 +104,12 @@ float PessoaFisica::CalcularPagamento(){
   else{
     throw Erro("O CPF deve conter 11 digitos");
   }
+
+  Hoje today;
+  
+  LogEscrita * log = new LogEscrita(this->getNome(), today.hoje(), "Pessoa Fisica", "Usuario nao criado", "Usuario criado com sucesso");
+    
+  this->listaLog.AdicionarLogEscrita(log);
     
 }
 

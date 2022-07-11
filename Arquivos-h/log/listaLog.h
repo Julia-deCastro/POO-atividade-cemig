@@ -9,8 +9,7 @@
 
 using namespace std;
 
-class ListaLog
-{
+class ListaLog{
   private:
 
     vector<LogLeitura*> listaLogLeitura;

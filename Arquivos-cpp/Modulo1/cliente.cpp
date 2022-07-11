@@ -6,11 +6,6 @@
 
 using namespace std;
 
-/* string* (string metodo){
-  string* metodo2 = new string(metodo);
-  return metodo2;
-} */
-
 Cliente::Cliente(){
 }
 
@@ -18,27 +13,24 @@ void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, stri
   if(this->permissao->verificaPermissao(("AdicionarUnidade")) == false)
     throw Erro("Permissao negada");
 
-  
-  
-  UnidadeConsumidora * u = new UnidadeConsumidora(endereco, numeroInstalacao, nivelDeTensao, tensaoDeAtendimento);
-  listaUnidades.push_back(u);
-
-
   string estadoAnterior;
 
   if(listaUnidades.size() == 0){
     estadoAnterior = "Lista de Unidades Vazia";
   }
   else{
-    estadoAnterior="Lista";
-  }
+    estadoAnterior="Lista não vazia";
+  }  
+  
+  UnidadeConsumidora * u = new UnidadeConsumidora(endereco, numeroInstalacao, nivelDeTensao, tensaoDeAtendimento);
+  listaUnidades.push_back(u);
 
 
 
 
   Hoje hoje;
-  LogEscrita* log = new LogEscrita();
-  log->criarLogEscrita(this->nome, hoje.hoje(), "Cliente", estadoAnterior);
+  LogEscrita* log = new LogEscrita(this->nome, hoje.hoje(), "Cliente", estadoAnterior, "elemento adicionado");
+  this->listaLog.AdicionarLogEscrita(log);
 
 }
   
@@ -102,13 +94,25 @@ void Cliente::ImprimeListaUnidades(){
 string Cliente::getNome(){
   if(this->permissao->verificaPermissao("getNome") == false)
     throw Erro("Permissao negada");
+
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Nome");
+  this->listaLog.AdicionarLogLeitura(log);
+  
   return this->nome;
+
 }
 
 bool Cliente::getInadimplente(){
   if(this->permissao->verificaPermissao("getInadimplente") == false)
     throw Erro("Permissao negada");
+  
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Nome");
+  this->listaLog.AdicionarLogLeitura(log);
+  
   return this->inadimplente;
+
 
 }
 
@@ -159,13 +163,20 @@ void Cliente::setInadimplente(bool inadimplente){
 
 Permissao* Cliente::getPermissao(){
   return this->permissao;
-  cout << "Get" << endl;
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Permissao");
+  this->listaLog.AdicionarLogLeitura(log);
 }
 
 Endereco Cliente::getEndereco(){
 
   if(this->permissao->verificaPermissao("getEndereco") == false)
     throw Erro("Permissao negada");
+  
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Endereco");
+  this->listaLog.AdicionarLogLeitura(log);
+  
   return this->endereco;
   
 }
@@ -174,6 +185,10 @@ string Cliente::getEmail(){
   if(this->permissao->verificaPermissao("getEmail") == false)
     throw Erro("Permissao negada");
   
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Email");
+  this->listaLog.AdicionarLogLeitura(log);
+
   return this->email;
 }
 string Cliente::getTelefone(){
@@ -181,6 +196,9 @@ string Cliente::getTelefone(){
   if(this->permissao->verificaPermissao("getTelefone") == false)
     throw Erro("Permissao negada");
   
+  Hoje today;
+  LogLeitura * log = new LogLeitura(this->nome, today.hoje(), "Cliente", "Telefone");
+  this->listaLog.AdicionarLogLeitura(log);
   return this->telefone;
 }
 
@@ -188,7 +206,7 @@ void Cliente::setEndereco(Endereco endereco){
 
   if(this->permissao->verificaPermissao("setNome") == false)
     throw Erro("Permissao negada");
-  
+
   this->endereco = endereco;
 
 }

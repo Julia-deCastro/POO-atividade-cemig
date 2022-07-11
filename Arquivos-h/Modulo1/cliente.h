@@ -43,10 +43,8 @@ class Cliente:public Usuario{
     void setEndereco(Endereco endereco);
     void setTelefone(string telefone);
     void setEmail (string email);
-   
-
-
-    
+    ListaLog listaLog;
+ 
 
   private:
     string nome;
@@ -56,7 +54,6 @@ class Cliente:public Usuario{
     Endereco endereco;
     string email;
     string telefone;
-    ListaLog listaLog;
 
     
     
