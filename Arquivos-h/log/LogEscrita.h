@@ -15,6 +15,7 @@ class LogEscrita : public Log
   string AtributoDepois;
 
   public:
+  LogEscrita(){};
   void criarLogEscrita(string, Data, string, string, string);
   string getEntidadeAlterada();
   string getAtributoAntes();

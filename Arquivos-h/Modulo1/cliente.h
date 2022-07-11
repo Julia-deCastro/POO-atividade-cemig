@@ -7,6 +7,10 @@
 #include "fatura.h"
 #include <iostream>
 #include <vector>
+#include "../../Arquivos-h/log/LogEscrita.h"
+#include "../../Arquivos-h/log/LogLeitura.h"
+#include "../../Arquivos-h/log/listaLog.h"
+#include "../../Arquivos-h/Geral/Hoje.h"
 
 using namespace std;
 
@@ -52,6 +56,9 @@ class Cliente:public Usuario{
     Endereco endereco;
     string email;
     string telefone;
+    ListaLog listaLog;
+
+    
     
 };
 

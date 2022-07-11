@@ -21,8 +21,25 @@ void Cliente::AdicionarUnidade (Endereco endereco, string numeroInstalacao, stri
   
   
   UnidadeConsumidora * u = new UnidadeConsumidora(endereco, numeroInstalacao, nivelDeTensao, tensaoDeAtendimento);
-  
   listaUnidades.push_back(u);
+
+
+  string estadoAnterior;
+
+  if(listaUnidades.size() == 0){
+    estadoAnterior = "Lista de Unidades Vazia";
+  }
+  else{
+    estadoAnterior="Lista";
+  }
+
+
+
+
+  Hoje hoje;
+  LogEscrita* log = new LogEscrita();
+  log->criarLogEscrita(this->nome, hoje.hoje(), "Cliente", estadoAnterior);
+
 }
   
 float Cliente::CalcularPagamento(){ 
