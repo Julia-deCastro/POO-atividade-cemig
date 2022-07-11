@@ -5,7 +5,7 @@ using namespace std;
 
 void Inadimplencia::desligarUnidade (UnidadeConsumidora unidade){
 
-  if(unidade.getInadimplente() == false)
+  if(unidade.getInadimplente() == true)
     unidade.setAtivo(false);
   
 }

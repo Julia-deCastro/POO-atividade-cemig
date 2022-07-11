@@ -39,3 +39,48 @@ if(this->getPermissao().verificaPermissao("AdicionarServico") == false)
   throw Erro("Limite de serviços do dia atingido"); 
 
 }
+
+
+
+void Eletricista::Encerrar(UnidadeConsumidora* unidade){
+  unidade->setAtivo(false);
+
+  Hoje hoje;
+  this->AdicionarServico(hoje.hoje());
+}
+
+void Eletricista::EncerrarInadimplente(UnidadeConsumidora* unidade){
+  
+  if(unidade->getInadimplente() == true)
+     unidade->setAtivo(false);
+
+  cout << "Unidade não está inadimplente" << endl;
+
+  Hoje hoje;
+  this->AdicionarServico(hoje.hoje());
+
+}
+
+
+void Eletricista::realizarReligacao(UnidadeConsumidora* unidade){
+   unidade->setAtivo(true);
+
+   Hoje hoje;
+  this->AdicionarServico(hoje.hoje());
+}
+
+
+void Eletricista::trocarMedidor(){
+
+  Hoje hoje;
+  this->AdicionarServico(hoje.hoje());
+
+}
+
+void Eletricista::FuncionarioRealizarLeitura(float leitura, Data dataExecutada, Data dataPlanejada, UnidadeConsumidora * unidade){
+  throw Erro("Um eletrecista não tem permissão para realizar essa função");
+}
+
+void Eletricista::criarFatura(Leitura leitura, UnidadeConsumidora * unidade){
+  throw Erro("Um eletrecista não tem permissão para realizar essa função");
+}
