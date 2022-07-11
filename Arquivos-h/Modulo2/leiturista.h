@@ -18,6 +18,11 @@ class Leiturista:public Funcionario{
     void AdicionarServico(Data);
     void FuncionarioRealizarLeitura(float leitura, Data dataExecutada, Data dataPlanejada, UnidadeConsumidora * unidade);
     void criarFatura(Leitura leitura, UnidadeConsumidora * unidade);
+
+    void Encerrar(UnidadeConsumidora* unidade);
+    void EncerrarInadimplente(UnidadeConsumidora* unidade);
+    void realizarReligacao(UnidadeConsumidora* unidade);
+    void trocarMedidor();
 };
 
 #endif

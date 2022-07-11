@@ -81,3 +81,20 @@ void Leiturista::criarFatura(Leitura leitura, UnidadeConsumidora * unidade){
   unidade->AdicionarFaturaUnidade(fat);
 }
 
+
+void Leiturista::Encerrar(UnidadeConsumidora* unidade){
+
+  throw Erro("Um leiturista não tem permissão para realizar essa função");
+}
+
+void Leiturista::EncerrarInadimplente(UnidadeConsumidora* unidade){
+  throw Erro("Um leiturista não tem permissão para realizar essa função");
+}
+
+void Leiturista::realizarReligacao(UnidadeConsumidora* unidade){
+  throw Erro("Um leiturista não tem permissão para realizar essa função");
+}
+
+void Leiturista::trocarMedidor(){
+  throw Erro("Um leiturista não tem permissão para realizar essa função");
+}
